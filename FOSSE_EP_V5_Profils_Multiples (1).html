@@ -1,0 +1,523 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>FOSSÉ EP · Profils multiples · V5</title>
+<style>
+:root{--navy:#123049;--ink:#21354a;--mute:#60768a;--blue:#087cb1;--cyan:#27aedb;--teal:#138774;--amber:#b86d14;--red:#bd463c;--line:#dce5ec;--bg:#eff4f8;--card:#fff;--shadow:0 10px 28px #1536530e}*{box-sizing:border-box}body{margin:0;font:14px/1.48 system-ui,'Segoe UI',Arial,sans-serif;color:var(--ink);background:var(--bg)}button,input,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #74b9df;outline-offset:2px}.top{background:#102c42;color:#fff;padding:15px clamp(15px,2vw,32px);display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}.brand{display:flex;align-items:center;gap:12px}.mark{height:43px;width:43px;display:grid;place-items:center;background:#235672;border:1px solid #4a8098;border-radius:11px;font-size:27px}.brand h1{margin:0;font-size:20px;letter-spacing:.35px}.brand small{color:#b4ccda}.version{font-size:10px;background:#277da3;border-radius:30px;padding:4px 8px;margin-left:4px}.actions{display:flex;gap:7px;flex-wrap:wrap}.btn{background:#fff;color:#20415c;border:1px solid #bfd2e0;border-radius:8px;padding:9px 11px;font-size:12px;font-weight:730}.btn.primary{background:#1786bc;border-color:#1786bc;color:#fff}.btn.dark{background:#1e4159;color:#f0faff;border-color:#426784}.btn:hover{filter:brightness(.96)}.layout{max-width:1800px;padding:17px;margin:auto;display:grid;grid-template-columns:316px minmax(0,1fr);gap:16px}.sidebar{align-self:start;position:sticky;top:10px;max-height:calc(100vh - 20px);overflow:auto;background:var(--card);border:1px solid var(--line);padding:17px;border-radius:13px;box-shadow:var(--shadow)}.kicker{font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:#2183ae;font-weight:850}.sidebar h2{font-size:16px;margin:2px 0 8px}.group{border-top:1px solid var(--line);padding-top:13px;margin-top:15px}.group h3{font-size:12px;margin:0 0 11px;color:var(--navy)}.field{display:grid;grid-template-columns:minmax(0,1fr) 107px;align-items:center;gap:8px;margin:8px 0}.field label{font-size:11.5px;font-weight:630;color:#354d63}.field input,.field select,.fullfield input{width:100%;border:1px solid #cbdce8;border-radius:7px;padding:7px 8px;min-width:0;background:#fbfdff;color:#16374b}.fullfield label{font-size:11.5px;font-weight:670}.fullfield input{margin-top:5px}.field select{font-size:11px}.hint{margin:9px 0 0;color:#698096;font-size:10.8px}.switch{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700}.switch input{accent-color:var(--blue);width:15px;height:15px}.error{font-size:11.5px;color:#b13733;font-weight:700;margin-top:12px}.main{display:flex;flex-direction:column;gap:13px;min-width:0}.intro{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.intro h2{font-size:19px;margin:0}.status{font-size:11px;color:#53758a;max-width:270px;text-align:right}.metrics{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}.metric,.panel,.notice{background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow)}.metric{padding:12px 13px;min-width:0}.metric .label{font-size:10px;letter-spacing:.45px;color:var(--mute);font-weight:780;text-transform:uppercase}.metric .value{font-size:21px;font-weight:820;color:#17688f;white-space:nowrap;font-variant-numeric:tabular-nums}.metric .sub{font-size:10px;color:#778a99}.metric.hot .value{color:#b86d14}.metric.bad .value{color:#bb3939}.notice{padding:13px 15px;border-left:4px solid #1986b4;box-shadow:none;font-size:12px}.notice.warning{border-left-color:#e0a442;background:#fffdfa}.notice.bad{border-left-color:#ce6156;background:#fffafa}.notice h3{margin:0 0 3px;font-size:12.5px}.notice p{margin:4px 0}.panels{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:13px}.panel{min-width:0;padding:14px}.panel.full{grid-column:1/-1}.panel-head{display:flex;align-items:start;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:9px}.panel h3{font-size:14px;color:#153a56;margin:0}.panel .sub{font-size:11px;color:#718499;margin-top:3px}.minor{font-size:10px;padding:6px 9px;background:#eff6fa;color:#26516b;border:1px solid #d6e4ed;border-radius:7px;font-weight:730}.figure{width:100%;background:#f9fcff;border-radius:9px;overflow:hidden;border:1px solid #e1eaf1}.figure svg{width:100%;height:auto;display:block;min-height:170px}.figure.profile svg{min-height:300px}.figure.scene{background:#dfeef2}.legend{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 0;font-size:10.5px;color:#536e83}.dot{display:inline-block;width:17px;height:3px;vertical-align:middle;margin-right:5px}.flexrow{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.flexrow label{font-size:11px;font-weight:700}.flexrow input[type=range]{width:115px;accent-color:var(--blue)}.results{display:grid;grid-template-columns:1fr 1fr;gap:4px 18px}.r{display:flex;justify-content:space-between;align-items:baseline;gap:8px;border-bottom:1px dotted #dbe7ee;padding:7px 0;font-size:11.5px}.r strong{font-variant-numeric:tabular-nums;white-space:nowrap}.reporttable{width:100%;border-collapse:collapse;font-size:11px}.reporttable th{text-align:left;background:#edf5fa;color:#24506b;font-size:10px;position:sticky;top:0}.reporttable td,.reporttable th{padding:8px;border-bottom:1px solid #e3eaf0}.reporttable td{font-variant-numeric:tabular-nums}.scroll{max-height:260px;overflow:auto;border:1px solid #e1eaf1;border-radius:9px}.tag{display:inline-block;background:#e5f4fb;color:#0b6f96;border-radius:12px;padding:2px 7px;font-size:10px;font-weight:800}.tag.alert{background:#fff0e2;color:#a05b14}.help{font-size:11.5px;line-height:1.58;color:#496277}.help strong{color:#264b67}.help a{color:#087eab}.disclaimer{border:1px solid #b8d6e7;background:#e9f5fb;border-radius:9px;padding:12px;font-size:11.5px}.file{display:none}.footer{text-align:center;font-size:10px;color:#8295a3;margin:8px 0 14px}.tooltip{background:#17374e;color:white;padding:7px 10px;border-radius:7px;font-size:11px;min-height:31px;display:flex;gap:14px;flex-wrap:wrap}.tooltip strong{color:#a9edff}.red{color:#a94136}.header-note{font-size:10px;color:#a9c7da}.bottombtns{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+@media(max-width:1400px){.metrics{grid-template-columns:repeat(3,minmax(0,1fr))}.layout{grid-template-columns:290px minmax(0,1fr)}.panels{grid-template-columns:1fr}}
+@media(max-width:800px){.top{padding:12px}.layout{display:block;padding:11px}.sidebar{position:static;max-height:none;margin-bottom:13px}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.results{grid-template-columns:1fr}.panel{padding:11px}.metric .value{font-size:19px}.status{text-align:left}}
+@media print{body{background:#fff}.top{background:#fff;color:#17374e}.actions,.sidebar,.minor,.flexrow input,.bottombtns,.tooltip{display:none!important}.layout{display:block}.metrics{grid-template-columns:repeat(5,1fr)}.panels{grid-template-columns:1fr 1fr}.panel,.metric,.notice{box-shadow:none;break-inside:avoid}.panel.full{grid-column:1/-1}.figure svg{min-height:0}}
+
+.timelinePanel{border:1px solid #9bcce3;background:linear-gradient(140deg,#fff,#ecf7fd);border-radius:13px;padding:16px;box-shadow:var(--shadow)}
+.timelinePanel h3{margin:0;font-size:16px;color:#104f72}.timeFields{display:grid;grid-template-columns:repeat(4,minmax(110px,1fr));gap:10px;margin-top:12px}.timeFields label{display:flex;flex-direction:column;font-size:11px;font-weight:750;color:#33546d}.timeFields input{width:100%;border:1px solid #bfd4e2;border-radius:7px;padding:7px;margin-top:3px}.transport{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-top:12px}.transport input[type=range]{flex:1;min-width:160px;accent-color:#1085b9}.transport select{padding:8px;border-radius:7px;border:1px solid #c0d5e4}.timeKpis{display:grid;grid-template-columns:repeat(5,minmax(95px,1fr));gap:8px;margin-top:10px}.timeKpis>div{background:#fff;border:1px solid #d8e7ef;border-radius:8px;padding:8px}.timeKpis small{display:block;color:#637d8e;font-size:10px}.timeKpis strong{font-size:14px;color:#12668c;font-variant-numeric:tabular-nums}.timeStatus{margin:8px 0;color:#225e79;font-size:11.5px;min-height:20px}.timeHelp{background:#fff6e9;border-left:3px solid #d79742;padding:8px 11px;font-size:11px;color:#705326;margin-top:12px}.hydrogram{max-width:660px}.hydrogram svg{width:100%;height:auto;display:block}
+.checkGrid{display:grid;grid-template-columns:repeat(4,minmax(70px,1fr));gap:8px}.checkGrid label{display:flex;flex-direction:column;font-size:11px;font-weight:750;color:#33546d}.checkGrid input{width:100%;border:1px solid #bfd4e2;border-radius:7px;padding:7px;margin-top:3px}.diagHead{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}.badge{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:4px 10px;font-size:11px;font-weight:850}.badge.ok{background:#e8f7ef;color:#146b45}.badge.warn{background:#fff3e4;color:#9d5b11}.badge.bad{background:#ffebeb;color:#a53838}.tiny{font-size:10px;color:#6b8496}.zone{display:inline-block;background:#fff3de;color:#9b601b;border-radius:999px;padding:2px 8px;font-size:10px;font-weight:800;margin-right:5px}.reporttable td .badge{font-size:10px;padding:3px 7px}.landNote{font-size:11px;color:#586f82}.diagnosticBox{background:linear-gradient(145deg,#fff,#f1f8fc);border:1px solid #d5e6ef;border-radius:12px;padding:12px}
+.segGrid{display:grid;grid-template-columns:repeat(2,minmax(80px,1fr));gap:8px}.miniResults{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}.miniCard{background:#fff;border:1px solid #dbe7ef;border-radius:12px;padding:12px 13px}.miniCard h4{margin:0 0 8px;color:#204b6a;font-size:13px}.miniCard p{margin:4px 0;font-size:11px;color:#4c6476}.figure.scene svg{min-height:260px;max-height:300px}.figure.section svg{min-height:300px}
+@media(max-width:900px){.timeFields{grid-template-columns:repeat(2,1fr)}.timeKpis{grid-template-columns:repeat(2,1fr)}.checkGrid{grid-template-columns:repeat(2,1fr)}}
+</style></head><body>
+<header class="top"><div class="brand"><div class="mark">≋</div><div><h1>FOSSÉ EP <span class="version">V5 · Profils multiples</span></h1><small>Fossés à redents · profils multiples · remous · perspective 3D</small></div></div><div class="actions"><button class="btn dark" id="exampleBtn">Exemple ressaut</button><button class="btn dark" id="newBtn">Réinitialiser</button><button class="btn dark" id="openBtn">Ouvrir JSON</button><button class="btn primary" id="saveBtn">↓ Projet JSON</button><button class="btn dark" id="csvBtn">↓ Points CSV</button><button class="btn dark" id="printBtn">Imprimer / PDF</button><input class="file" type="file" id="jsonFile" accept=".json,application/json"></div></header>
+<div class="layout"><aside class="sidebar"><div class="kicker">Paramètres du projet</div><h2>Simulation hydraulique & diagnostic</h2><div class="fullfield"><label for="project">Nom du projet</label><input id="project" data-key="project" type="text" value="Fossé pluvial — scénario de ressaut" maxlength="120"></div>
+<div class="group"><h3>01 / Section et débit</h3>
+<div class="field"><label for="flow">Débit Q (m³/s)</label><input id="flow" data-key="flow" type="number" min="0.0001" max="500" step="0.01" value="0.38"></div><div class="field"><label for="shape">Forme de section</label><select id="shape" data-key="shape"><option value="trapezoid">Trapézoïdale</option><option value="rectangular">Rectangulaire</option><option value="triangular">Triangulaire en V</option></select></div>
+<div class="field"><label for="bottom">Largeur de fond b (m)</label><input id="bottom" data-key="bottom" type="number" min="0" max="100" step="0.05" value="0.7"></div>
+<div class="field"><label for="side">Talus z (H/1V)</label><input id="side" data-key="side" type="number" min="0" max="10" step="0.1" value="1"></div>
+<div class="field"><label for="height">Profondeur fossé (m)</label><input id="height" data-key="height" type="number" min="0.05" max="30" step="0.1" value="1.2"></div>
+<div class="field"><label for="rough">Manning n (-)</label><input id="rough" data-key="rough" type="number" min="0.005" max="0.25" step="0.001" value="0.035"></div>
+<p class="hint">Section prismatique constante au choix : trapézoïdale, rectangulaire ou triangulaire · Strickler K = 1/n · débit constant sans apports latéraux.</p></div>
+<div class="group"><h3>02 / Implantation et redents</h3>
+<div class="field"><label for="length">Longueur L (m)</label><input id="length" data-key="length" type="number" min="1" max="20000" step="1" value="80"></div>
+<div class="field"><label for="slope">Pente initiale (%)</label><input id="slope" data-key="slope" type="number" min="0" max="100" step="0.1" value="8"></div>
+<div class="field"><label for="zup">Cote fond amont (m)</label><input id="zup" data-key="zup" type="number" min="-10000" max="10000" step=".01" value="100"></div>
+<label class="switch"><input id="stepsOn" data-key="stepsOn" type="checkbox" checked>Activer les redents (chutes de fond)</label>
+<div class="field"><label for="stepH">Hauteur chute h (m)</label><input id="stepH" data-key="stepH" type="number" min="0.01" max="20" step="0.05" value="0.3"></div>
+<div class="field"><label for="spacing">Entraxe des chutes (m)</label><input id="spacing" data-key="spacing" type="number" min="0.2" max="20000" step="1" value="10"></div>
+<div class="field"><label for="dropLoss">Perte cinétique K chute (-)</label><input id="dropLoss" data-key="dropLoss" type="number" min="0" max="1" step="0.05" value="0.08"></div>
+<p class="hint">Un redent est ici une <strong>chute verticale du fil d'eau</strong>, sans obstacle surélevé. La pente aménagée est recalculée pour conserver la cote aval de départ. K est une hypothèse de perte locale, non calibrée.</p></div><div class="group"><h3>03 / Profils longitudinaux multiples</h3><label class="switch"><input id="multiOn" data-key="multiOn" type="checkbox">Activer plusieurs profils de pente</label><div class="field"><label for="segN">Nombre de profils</label><input id="segN" data-key="segN" type="number" min="1" max="4" step="1" value="2"></div><div class="segGrid"><label for="seg1Len">Profil 1 · Longueur (m)<input id="seg1Len" data-key="seg1Len" type="number" min="0.5" max="20000" step="0.5" value="30"></label><label for="seg1Slope">Profil 1 · Pente (%)<input id="seg1Slope" data-key="seg1Slope" type="number" min="0" max="100" step="0.1" value="8"></label><label for="seg2Len">Profil 2 · Longueur (m)<input id="seg2Len" data-key="seg2Len" type="number" min="0.5" max="20000" step="0.5" value="25"></label><label for="seg2Slope">Profil 2 · Pente (%)<input id="seg2Slope" data-key="seg2Slope" type="number" min="0" max="100" step="0.1" value="6"></label><label for="seg3Len">Profil 3 · Longueur (m)<input id="seg3Len" data-key="seg3Len" type="number" min="0.5" max="20000" step="0.5" value="15"></label><label for="seg3Slope">Profil 3 · Pente (%)<input id="seg3Slope" data-key="seg3Slope" type="number" min="0" max="100" step="0.1" value="4"></label><label for="seg4Len">Profil 4 · Longueur (m)<input id="seg4Len" data-key="seg4Len" type="number" min="0.5" max="20000" step="0.5" value="10"></label><label for="seg4Slope">Profil 4 · Pente (%)<input id="seg4Slope" data-key="seg4Slope" type="number" min="0" max="100" step="0.1" value="3"></label></div><p class="hint">Si cette option est activée, le calcul prend en compte une succession de segments de pentes différentes. La longueur totale et la pente moyenne sont recalculées automatiquement.</p></div>
+<div class="group"><h3>04 / Conditions aux limites · indispensable</h3>
+<div class="field"><label for="upMode">Condition amont</label><select id="upMode" data-key="upMode"><option value="critical">Contrôle critique approché</option><option value="imposed">Profondeur torrentielle</option></select></div>
+<div class="field"><label for="upDepth">Profondeur amont (m)</label><input id="upDepth" data-key="upDepth" type="number" min="0.001" max="30" step=".01" value=".15" disabled></div>
+<div class="field"><label for="tail">Profondeur aval (m)</label><input id="tail" data-key="tail" type="number" min=".001" max="30" step=".05" value=".7"></div>
+<p class="hint">La profondeur aval doit provenir d'un niveau de rejet, d'une courbe de tarage ou d'un calcul hydraulique aval. Sa modification peut déplacer ou supprimer le ressaut.</p></div>
+<div class="group"><h3>05 / Discrétisation et affichage</h3>
+<div class="field"><label for="dx">Pas spatial cible Δx (m)</label><input id="dx" data-key="dx" type="number" min=".05" max="100" step=".05" value=".25"></div>
+<div class="field"><label for="camera">Angle vue 3D (°)</label><input id="camera" data-key="camera" type="range" min="17" max="60" step="1" value="34"></div>
+<label class="switch"><input id="energyOn" data-key="energyOn" type="checkbox" checked>Afficher ligne d'énergie</label>
+<label class="switch"><input id="criticalOn" data-key="criticalOn" type="checkbox" checked>Afficher hauteur critique</label>
+<div class="group"><h3>06 / Critères de confirmation</h3><div class="checkGrid"><label for="confirmFree">Revanche mini (m)<input id="confirmFree" data-key="confirmFree" type="number" min="0" max="5" step="0.01" value="0.20"></label><label for="confirmVmin">Vitesse mini (m/s)<input id="confirmVmin" data-key="confirmVmin" type="number" min="0" max="10" step="0.05" value="0.40"></label><label for="confirmVmax">Vitesse maxi (m/s)<input id="confirmVmax" data-key="confirmVmax" type="number" min="0.1" max="25" step="0.10" value="3.00"></label><label for="confirmFrMax">Froude maxi<input id="confirmFrMax" data-key="confirmFrMax" type="number" min="0.5" max="10" step="0.05" value="2.50"></label></div><p class="hint">Ces seuils servent à un <strong>pré-diagnostic</strong>. Ils ne remplacent pas les critères géotechniques, de stabilité des talus, d’érosion ou les exigences du maître d’ouvrage.</p></div><p class="hint">Cliquer sur le profil en long pour afficher un point du calcul. La perspective 3D n'est pas à l'échelle terrain.</p></div>
+<div id="error" role="alert" class="error"></div></aside>
+<main class="main"><div class="intro"><div><div class="kicker">Tableau de bord / calcul permanent 1D</div><h2 id="projectTitle">Fossé pluvial — scénario de ressaut</h2></div><div class="status" id="status">Calcul hydraulique en cours...</div></div>
+<section class="metrics"><div class="metric"><div class="label">Hauteur normale</div><div class="value" id="yn">—</div><div class="sub">Manning – pente aménagée</div></div><div class="metric"><div class="label">Hauteur critique</div><div class="value" id="yc">—</div><div class="sub">Fr = 1</div></div><div class="metric"><div class="label">Ressauts intérieurs</div><div class="value" id="jumpN">—</div><div class="sub">Quantité de mouvement</div></div><div class="metric"><div class="label">Premier ressaut · PK</div><div class="value" id="jumpPK">—</div><div class="sub">Position conditionnelle (m)</div></div><div class="metric" id="freeCard"><div class="label">Revanche minimale</div><div class="value" id="free">—</div><div class="sub">H - y max (m)</div></div></section>
+<div id="alerts" aria-live="polite"></div>
+<section class="timelinePanel" id="timePanel" aria-label="Simulation en temps"><div class="panel-head"><div><div class="kicker">Nouveau · Simulation transitoire 1D</div><h3>▶ Animation de la ligne d’eau dans le temps</h3><div class="sub">Hydrogramme amont → calcul des hauteurs et débits locaux → profil longitudinal, coupe, plan et perspective actualisés</div></div><span class="tag alert">Modèle exploratoire · non validé pour dimensionnement</span></div>
+<div class="timeFields"><label for="tmDuration">Durée simulée (s)<input id="tmDuration" type="number" min="20" max="600" step="10" value="120"></label><label for="tmBase">Q initial / Q projet<input id="tmBase" type="number" min="0.05" max="1" step="0.05" value="0.5"></label><label for="tmPeak">Q pointe / Q projet<input id="tmPeak" type="number" min="1" max="5" step="0.1" value="1.8"></label><label for="tmPeakAt">Pointe à t / durée<input id="tmPeakAt" type="number" min="0.15" max="0.75" step="0.05" value="0.35"></label></div>
+<div class="transport"><button id="tmPlay" class="btn primary">▶ Calculer et lire</button><button id="tmPause" class="btn" disabled>❚❚ Pause</button><button id="tmReset" class="btn">↺ Début</button><button id="tmCancel" class="btn" disabled>✕ Annuler calcul</button><label for="tmSpeed" style="font-size:11px;font-weight:700">Lecture</label><select id="tmSpeed"><option value="1">× 1</option><option value="5">× 5</option><option value="10" selected>× 10</option><option value="20">× 20</option><option value="40">× 40</option></select><label for="tmSlider" id="tmClock" style="font-weight:750;font-variant-numeric:tabular-nums;min-width:95px">0 s</label><input id="tmSlider" type="range" min="0" max="120" value="0" aria-label="Sélection de l'instant"><button class="btn" id="tmExport">↓ CSV temporel</button></div>
+<div class="timeStatus" id="tmStatus" role="status">Configurer l’hydrogramme puis cliquer sur « Calculer et lire ».</div><div class="hydrogram" id="tmPlot"></div>
+<div class="timeKpis"><div><small>Débit entrant</small><strong id="tmQin">—</strong></div><div><small>Débit sortant</small><strong id="tmQout">—</strong></div><div><small>Hauteur max</small><strong id="tmMax">—</strong></div><div><small>Résidu de masse</small><strong id="tmMass">—</strong></div><div><small>Transitions / remous</small><strong id="tmJump">—</strong></div></div><p class="hint" id="tmWarning">Les profils permanent et transitoire sont distincts ; paramètres géométriques inchangés.</p>
+<div class="timeHelp"><strong>Portée scientifique :</strong> résolution exploratoire des équations de Saint-Venant 1D (volumes finis HLL, reconstruction hydrostatique et friction de Manning). Le débit amont varie, la profondeur aval est maintenue constante. Les chutes sont des discontinuités de fond idéalisées : jet, aération, dissipation locale et ressaut physique sur redent non résolus. Le marqueur Fr et les zones de remous sont des indicateurs ; le résultat n’est pas une simulation 2D/CFD ni une validation réglementaire.</div></section>
+<div class="panels">
+<section class="panel full"><div class="panel-head"><div><h3>Profil longitudinal · calcul hydraulique 1D</h3><div class="sub">Ligne d'eau par équation d'énergie · ressaut par quantité de mouvement · PK vers l'aval</div></div><div class="bottombtns"><button class="minor" data-export="profile">Exporter SVG</button></div></div><div class="figure profile" id="profileFig"></div><div id="pointInfo" class="tooltip">Cliquez sur le profil pour inspecter les cotes, vitesses et Froude.</div><div class="legend"><span><i class="dot" style="background:#a16b3d"></i>Fond / redents</span><span><i class="dot" style="background:#0285cc"></i>Ligne d'eau calculée</span><span><i class="dot" style="background:#d48423"></i>Zone de remous</span><span><i class="dot" style="background:#1f9b77"></i>Cote critique</span><span><i class="dot" style="background:#cb7b20"></i>Énergie</span><span><i class="dot" style="background:#b44439"></i>Ressaut localisé</span></div></section>
+<section class="panel full"><div class="panel-head"><div><h3>Perspective 3D · fossé et écoulement</h3><div class="sub">Volumes de terrain, talus, eau et ouvrages de chute : rendu illustratif piloté par les résultats 1D</div></div><div class="flexrow"><label for="viewMode">Orientation</label><select id="viewMode" class="minor"><option value="down">Depuis l'amont → aval</option><option value="up">Depuis l'aval → amont</option></select><button class="minor" data-export="scene">Exporter SVG 3D</button></div></div><div class="figure scene" id="sceneFig"></div><div class="help">La maquette 3D paysagère met mieux en évidence les redents, les zones de remous et les ressauts. Les effets d'écume restent <strong>illustratifs</strong> ; les valeurs de référence sont celles du profil 1D, des tableaux et du diagnostic.</div></section>
+<section class="panel"><div class="panel-head"><div><h3>Coupe type trapézoïdale</h3><div class="sub">Profondeur maximale calculée et géométrie</div></div><button class="minor" data-export="section">SVG</button></div><div class="figure" id="sectionFig"></div></section>
+<section class="panel"><div class="panel-head"><div><h3>Vue en plan</h3><div class="sub">Emprise des redents et largeur en tête</div></div><button class="minor" data-export="plan">SVG</button></div><div class="figure" id="planFig"></div></section>
+<section class="panel"><div class="panel-head"><div><h3>Synthèse hydraulique</h3><div class="sub">Calcul d'énergie, Froude et cote aval</div></div></div><div id="results" class="results"></div></section>
+<section class="panel"><div class="panel-head"><div><h3>Ressauts et contrôles</h3><div class="sub">Ressaut uniquement si croisement des forces spécifiques</div></div></div><div id="jumpsResults" class="results"></div></section><section class="panel full"><div class="panel-head"><div><h3>Géométrie, redents, revanche et capacité</h3><div class="sub">Distinction entre la géométrie du fossé, les caractéristiques des redents, la revanche libre et la capacité hydraulique</div></div></div><div id="designSummary" class="miniResults"></div></section><section class="panel full"><div class="panel-head"><div><h3>Profils longitudinaux pris en compte</h3><div class="sub">Longueur, pente naturelle et pente aménagée de chaque profil</div></div></div><div class="scroll"><table class="reporttable"><thead><tr><th>Profil</th><th>Longueur (m)</th><th>Pente naturelle (%)</th><th>Pente aménagée (%)</th><th>Capacité utile (m³/s)</th><th>Capacité plein bord (m³/s)</th></tr></thead><tbody id="segTable"><tr><td colspan="6">Aucun profil calculé.</td></tr></tbody></table></div></section><section class="panel full"><div class="panel-head"><div><h3>Confirmation du bon dimensionnement</h3><div class="sub">Pré-diagnostic multicritère : revanche, vitesses, Froude, remous et redents noyés</div></div></div><div class="diagnosticBox"><div id="confirmSummary" class="diagHead"><span class="badge warn">En attente</span><span class="tiny">Calcul requis</span></div><div class="landNote" id="confirmText" style="margin-top:8px">L'outil aide à savoir si le fossé paraît correctement dimensionné pour les hypothèses saisies.</div></div><div class="scroll" style="margin-top:10px"><table class="reporttable"><thead><tr><th>Vérification</th><th>Valeur calculée</th><th>Critère</th><th>Statut</th><th>Commentaire</th></tr></thead><tbody id="confirmTable"><tr><td colspan="5">Aucun diagnostic.</td></tr></tbody></table></div></section><section class="panel full"><div class="panel-head"><div><h3>Localisation des remous</h3><div class="sub">Zones sous influence aval, surélévation de la ligne d'eau et redents noyés</div></div></div><div class="landNote" id="remousSummary">Aucun remous analysé.</div><div class="scroll" style="margin-top:10px"><table class="reporttable"><thead><tr><th>Zone</th><th>PK début (m)</th><th>PK fin (m)</th><th>Longueur (m)</th><th>y max (m)</th><th>Surhausse vs yₙ (m)</th><th>Tronçon dominant</th></tr></thead><tbody id="remousTable"><tr><td colspan="7">Aucune zone de remous.</td></tr></tbody></table></div></section>
+<section class="panel full"><div class="panel-head"><div><h3>Tableau des ressauts localisés</h3><div class="sub">PK, profondeurs conjuguées, Froude amont et perte de charge par ressaut.</div></div><button class="minor" id="csv2Btn">Exporter stations CSV</button></div><div class="scroll"><table class="reporttable"><thead><tr><th>N°</th><th>PK (m)</th><th>y₁ (m)</th><th>y₂ (m)</th><th>Fr₁</th><th>ΔE (m)</th><th>Tronçon</th></tr></thead><tbody id="jumpTable"><tr><td colspan="7">Aucun résultat.</td></tr></tbody></table></div></section>
+<section class="panel full"><div class="disclaimer"><strong>Portée du modèle — dimensionnement préalable, pas de validation automatique exhaustive.</strong> Écoulement permanent 1D et section prismatique : tronçons graduels par bilan d'énergie à pas fini, branche fluviale calculée depuis l'aval, branche torrentielle depuis l'amont, ressauts approchés par égalité de force spécifique. Les chutes sont traitées par transfert d'énergie avec perte locale supposée, puis contrôle critique / noyade approchés. Jets, décollement, ressaut sur chute, bulles, interaction 3D, obstacles, infiltration, transport solide et débordement hors lit <strong>ne sont pas résolus</strong>. Un ressaut détecté fournit une position de transition calculée, pas son emprise réelle ni sa longueur. Le coefficient K de chute et la condition aval doivent être justifiés. Si la chute est noyée ou qu'un ressaut se forme dans l'ouvrage, recourir à une modélisation détaillée et vérifier stabilité, érosion et dissipation.</div><div class="help" style="margin-top:12px"><strong>Fondements :</strong> <a href="https://www.hec.usace.army.mil/confluence/rasdocs/ras1dtechref/6.5/overview-of-optional-capabilities/mixed-flow-regime-calculations" target="_blank" rel="noopener">USACE HEC-RAS — régimes mixtes et force spécifique</a> · <a href="https://www.hec.usace.army.mil/confluence/rasdocs/ras1dtechref/latest/theoretical-basis-for-one-dimensional-and-two-dimensional-hydrodynamic-calculations/1d-steady-flow-water-surface-profiles/1d-steady-flow-program-limitations" target="_blank" rel="noopener">limites de la modélisation 1D</a> · <a href="https://www.hec.usace.army.mil/software/hec-ras/documentation/HEC-RAS_6.0_ReferenceManual.pdf" target="_blank" rel="noopener">référence HEC-RAS (ouvrages de chute)</a>. Tous les calculs s'effectuent localement dans le navigateur ; aucune bibliothèque externe nécessaire.</div></section>
+</div><div class="footer">FOSSÉ EP V4 · diagnostic de dimensionnement, remous et rendu paysager · unités SI · enregistrer les paramètres en JSON</div></main></div>
+<script>
+// BEGIN HYDRAULICS — écoulement permanent 1D, géométrie prismatique à forme variable et profils longitudinaux multiples
+'use strict';
+const G=9.81, EPS=1e-9;
+const shapeLabel=p=>p.shape==='rectangular'?'Rectangulaire':(p.shape==='triangular'?'Triangulaire en V':'Trapézoïdale');
+function bEff(p){return p.shape==='triangular'?0:Math.max(0,p.bottom||0);}
+function sEff(p){return p.shape==='rectangular'?0:Math.max(0,p.side||0);}
+function A(y,p){let b=bEff(p),s=sEff(p);return b*y+s*y*y;}
+function T(y,p){let b=bEff(p),s=sEff(p);return b+2*s*y;}
+function P(y,p){let b=bEff(p),s=sEff(p);return b+(s===0?2*y:2*y*Math.hypot(1,s));}
+function pressure(y,p){let b=bEff(p),s=sEff(p);return b*y*y/2+s*y*y*y/3;}
+function V(y,p,q=p.flow){return q/Math.max(A(y,p),1e-12);}
+function Fr(y,p,q=p.flow){return Math.sqrt(q*q*T(y,p)/(G*Math.max(A(y,p),1e-12)**3));}
+function E(y,p,q=p.flow){let v=V(y,p,q);return y+v*v/(2*G);}
+function SF(y,p,q=p.flow){let a=A(y,p),r=a/Math.max(P(y,p),1e-12);return (p.rough*q/(Math.max(a,1e-12)*Math.max(r,1e-12)**(2/3)))**2;}
+function qManning(y,s,p){if(!(s>0))return 0;let a=A(y,p),r=a/Math.max(P(y,p),1e-12);return (a/p.rough)*r**(2/3)*Math.sqrt(s);}
+function M(y,p,q=p.flow){return q*q/(G*Math.max(A(y,p),1e-12))+pressure(y,p);}
+function bisect(fn,lo,hi,n=65){let flo=fn(lo),fhi=fn(hi);if(!Number.isFinite(flo)||!Number.isFinite(fhi)||flo*fhi>0)return null;for(let i=0;i<n;i++){let mid=(lo+hi)/2,fm=fn(mid);if(fm*flo>0){lo=mid;flo=fm;}else{hi=mid;fhi=fm;}}return (lo+hi)/2;}
+function critical(p,q=p.flow){let fn=y=>q*q*T(y,p)/(G*Math.max(A(y,p),1e-12)**3)-1;let hi=1;while(fn(hi)>0&&hi<1e5)hi*=2;return bisect(fn,1e-8,hi);}
+function normal(s,p,q=p.flow){if(!(s>0))return null;let f=y=>qManning(y,s,{...p,flow:q})-q;let hi=1;while(f(hi)<0&&hi<1e5)hi*=2;return bisect(f,1e-8,hi);}
+function rootE(target,branch,p,yc){if(!Number.isFinite(target)||target<E(yc,p)-1e-7)return null;let fn=y=>E(y,p)-target;let near=yc*(1+(branch==='sub'?1e-8:-1e-8));if(target<=E(yc,p)+1e-8)return yc;if(branch==='super')return bisect(fn,Math.max(1e-8,yc*1e-7),near);let hi=Math.max(2*yc,target+2);for(let k=0;k<20&&fn(hi)<0;k++)hi*=2;return bisect(fn,near,hi);}
+function profileSegments(p){
+ if(!p.multiOn)return {list:[{i:0,len:p.length,slope:p.slope/100}],totalLen:p.length,totalDrop:p.length*p.slope/100,avgSlope:p.slope/100};
+ let n=Math.max(1,Math.min(4,Math.round(Number(p.segN)||1))),list=[];
+ for(let i=1;i<=n;i++){
+  let L=Number(p['seg'+i+'Len']),S=Number(p['seg'+i+'Slope'])/100;
+  if(!(L>0))throw Error('Longueur invalide du profil '+i+'.');
+  if(!(S>=0))throw Error('Pente invalide du profil '+i+'.');
+  list.push({i:i-1,len:L,slope:S});
+ }
+ let totalLen=list.reduce((s,v)=>s+v.len,0),totalDrop=list.reduce((s,v)=>s+v.len*v.slope,0);
+ if(!(totalLen>0))throw Error('La longueur totale des profils doit être positive.');
+ return {list,totalLen,totalDrop,avgSlope:totalDrop/totalLen};
+}
+function segAt(g,x){if(x<=0)return g.segments[0];if(x>=g.totalLen)return g.segments[g.segments.length-1];for(let s of g.segments)if(x<=s.x1+1e-9)return s;return g.segments[g.segments.length-1];}
+function contZAt(g,x){let xx=Math.max(0,Math.min(g.totalLen,x)),s=segAt(g,xx);return s.z0-s.sb*(xx-s.x0);}
+function stepCountBeforeX(g,p,x){if(!p.stepsOn)return 0;return Math.max(0,Math.min(g.n,Math.floor((Math.max(0,Math.min(g.totalLen,x))-1e-9)/p.spacing)));}
+function bedZAt(g,p,x){return contZAt(g,x)-stepCountBeforeX(g,p,x)*p.stepH;}
+function geom(p){
+ let prof=profileSegments(p),nat=prof.avgSlope,n=p.stepsOn?Math.floor((prof.totalLen-1e-7)/p.spacing):0;
+ if(n>75)throw Error('Plus de 75 redents : augmentez l’entraxe ou réduisez la longueur.');
+ let stepDrop=n*p.stepH;
+ if(stepDrop>=prof.totalDrop-1e-10)throw Error('Profil impossible : la somme des chutes excède la dénivelée disponible.');
+ let factor=prof.totalDrop>EPS?(prof.totalDrop-stepDrop)/prof.totalDrop:1;
+ let segments=[],x0=0,z0=p.zup;
+ for(let s of prof.list){let sb=s.slope*factor,x1=x0+s.len,z1=z0-sb*s.len;segments.push({i:s.i,x0,x1,len:s.len,nat:s.slope,sb,z0,z1});x0=x1;z0=z1;}
+ let g0={segments,totalLen:prof.totalLen,n},xs=[0,...Array.from({length:n},(_,i)=>(i+1)*p.spacing),prof.totalLen],reaches=[];
+ for(let i=0;i<xs.length-1;i++){let a=xs[i],b=xs[i+1];reaches.push({i,a,b,len:b-a,za:contZAt(g0,a)-i*p.stepH,zb:contZAt(g0,b)-i*p.stepH});}
+ return {nat,n,sb:(prof.totalDrop-stepDrop)/prof.totalLen,xs,reaches,zout:p.zup-prof.totalDrop,totalLen:prof.totalLen,totalDrop:prof.totalDrop,totalStepDrop:stepDrop,segments,profileSegments:prof.list};
+}
+function rkStep(y,z1,z2,dx,branch,p,yc,backward){let ynear=Math.max(1e-8,y),es=E(ynear,p),sf1=SF(ynear,p),target=es+z1-z2;let fn=trial=>E(trial,p)+(backward?-1:1)*dx*(sf1+SF(trial,p))/2-target;let near=yc*(branch==='sub'?1+1e-7:1-1e-7);let lo,hi;if(branch==='super'){lo=Math.max(1e-8,yc*1e-6);hi=near;}else{lo=near;hi=Math.max(ynear*1.5,yc*3,p.height*1.5,1);for(let k=0;k<20&&fn(hi)*fn(lo)>0;k++)hi*=2;}let res=bisect(fn,lo,hi,52);return res===null?null:res;}
+function integrateReach(p,g,reach,yBoundary,branch,direction,yc,notes){
+ let dx0=Math.min(Math.max(p.dx,p.length/4800),reach.len),count=Math.max(2,Math.min(1600,Math.ceil(reach.len/dx0))),dx=reach.len/count,out=new Array(count+1),start=direction==='forward'?0:count;
+ out[start]={x:direction==='forward'?reach.a:reach.b,y:yBoundary,reg:branch};
+ for(let k=1;k<=count;k++){
+  let from=direction==='forward'?k-1:count-k+1,to=direction==='forward'?k:count-k,x0=reach.a+from*dx,x1=reach.a+to*dx,z0=contZAt(g,x0)-reach.i*p.stepH,z1=contZAt(g,x1)-reach.i*p.stepH;
+  let next=rkStep(out[from].y,z0,z1,dx,branch,p,yc,direction==='backward');
+  if(next===null){notes.push(`PK ${x1.toFixed(2)} m : intégration ${branch==='sub'?'fluviale':'torrentielle'} interrompue à l’approche du régime critique ; profil local non déterminé.`);return {data:out,complete:false,stop:x1};}
+  out[to]={x:x1,y:next,reg:branch};
+ }
+ return {data:out,complete:true};
+}
+function findJump(p,sp,bp,yc){
+ if(!sp||!bp||sp.length!==bp.length)return {idx:null,reason:'Profil de régime incomplet'};
+ let ds=sp.map((s,i)=>s&&bp[i]?M(s.y,p)-M(bp[i].y,p):null);
+ for(let i=0;i<ds.length-1;i++)if(ds[i]!==null&&ds[i+1]!==null&&ds[i]>=-1e-6&&ds[i+1]<=1e-6){
+  if(sp[i].y>=yc||bp[i].y<=yc)continue;
+  let f=ds[i]/(ds[i]-ds[i+1]+EPS),x=sp[i].x+f*(sp[i+1].x-sp[i].x),y1=sp[i].y+f*(sp[i+1].y-sp[i].y),y2=bp[i].y+f*(bp[i+1].y-bp[i].y);
+  return {idx:i,x,y1,y2,fr1:Fr(y1,p),energyLoss:E(y1,p)-E(y2,p),reason:'Ressaut localisé par égalité de force spécifique'};
+ }
+ if(ds.every(d=>d===null))return {idx:null,reason:'Profils incomplets'};
+ if(ds[0]!==null&&ds[0]<0)return {idx:null,reason:'Le ressaut est au PK amont ou à l’extérieur du tronçon ; emprise non déterminée'};
+ if(ds.at(-1)!==null&&ds.at(-1)>0)return {idx:null,reason:'Ressaut non contenu dans le tronçon ; aval torrentiel'};
+ return {idx:null,reason:'Aucun croisement physique de force spécifique sur ce tronçon'};
+}
+function solve(p){
+ if(p.flow<=0||bEff(p)<0||sEff(p)<0||p.height<=0||p.rough<=0||p.length<=0||p.spacing<=0||p.dx<=0||p.tail<=0)throw Error('Les dimensions, le débit, la rugosité, le pas et la profondeur aval doivent être valides.');
+ if(p.shape==='triangular'&&!(p.side>0))throw Error('La section triangulaire nécessite un talus strictement positif.');
+ let g=geom(p),yc=critical(p),yn=normal(g.sb,p),notes=[],warnings=[],superProfiles=[],subProfiles=[],jumps=[],reachResults=[];
+ if(p.slope>=10)warnings.push('Pente naturelle moyenne ≥ 10 % : hors hypothèse de faible pente usuelle du calcul 1D ; résultats à expertiser.');
+ if(Math.max(...g.segments.map(s=>s.sb))>=.10)warnings.push('Au moins un profil aménagé présente une pente ≥ 10 % : le modèle 1D devient discutable sur ce tronçon.');
+ if(yn!==null&&yn>p.height)warnings.push('Hauteur normale supérieure à la profondeur du fossé.');
+ if(p.tail>p.height)warnings.push('Condition aval supérieure à la profondeur du fossé : débordement imposé.');
+ if(p.upMode==='imposed'&&p.upDepth>=yc)throw Error(`La profondeur amont du mode torrentiel doit être inférieure à y꜀ = ${yc.toFixed(3)} m.`);
+ for(let i=0;i<g.reaches.length;i++){
+  let r=g.reaches[i],ys;
+  if(i===0)ys=p.upMode==='imposed'?p.upDepth:yc*(1-1e-4);
+  else {
+   let prev=superProfiles[i-1].data,finish=prev[prev.length-1];
+   if(!finish){warnings.push(`PK ${r.a.toFixed(1)} m : branche torrentielle amont non déterminée.`);ys=yc*(1-1e-4);}
+   else{let eout=E(finish.y,p)+p.stepH-p.dropLoss*V(finish.y,p)**2/(2*G);ys=rootE(eout,'super',p,yc);if(ys===null){ys=yc*(1-1e-4);warnings.push(`PK ${r.a.toFixed(1)} m : énergie à la chute insuffisante après pertes supposées ; réinitialisation critique illustrative.`);}}
+  }
+  superProfiles.push(integrateReach(p,g,r,ys,'super','forward',yc,notes));
+ }
+ for(let i=g.reaches.length-1;i>=0;i--){
+  let r=g.reaches[i],yb,control='';
+  if(i===g.reaches.length-1){if(p.tail<=yc){subProfiles[i]=null;reachResults[i]={control:'Aval torrentiel : profondeur imposée ≤ critique',submerged:false};continue;}yb=p.tail;control='Tirant aval imposé';}
+  else{
+   let down=reachResults[i+1],next=down?.selected?.[0],stage=next?g.reaches[i+1].za+next.y:-Infinity,drown=stage>=r.zb+yc;
+   if(drown&&next){let target=E(next.y,p)-p.stepH+p.dropLoss*V(next.y,p)**2/(2*G);yb=rootE(target,'sub',p,yc);if(yb===null){yb=yc*(1+1e-5);warnings.push(`PK ${r.b.toFixed(1)} m : transition noyée énergétiquement non résolue ; contrôle critique approximatif.`);}control='Chute noyée : liaison d’énergie approximative';warnings.push(`PK ${r.b.toFixed(1)} m : chute potentiellement noyée ; localisation des ressauts voisins indicative.`);}else{yb=yc*(1+1e-5);control='Contrôle critique au bord de chute libre (approximation)';}
+   reachResults[i]={control,submerged:drown};
+  }
+  let bp=integrateReach(p,g,r,yb,'sub','backward',yc,notes),sp=superProfiles[i],jump=findJump(p,sp.data,bp.data,yc);subProfiles[i]=bp;if(jump.x!==undefined)jumps.unshift({...jump,reach:i});
+  let selected=[],firstDiff=sp.data[0]&&bp.data[0]?M(sp.data[0].y,p)-M(bp.data[0].y,p):null,chooseSub=jump.idx===null&&firstDiff!==null&&firstDiff<0;
+  for(let j=0;j<sp.data.length;j++){
+   let s=sp.data[j],b=bp.data[j],chosen=jump.idx!==null?(j<=jump.idx?s:b):(chooseSub?(b||s):(s||b));
+   if(!chosen){notes.push(`PK ${r.a.toFixed(2)} m : lacune de calcul, point non représenté.`);continue;}
+   selected.push({...chosen,z:contZAt(g,chosen.x)-i*p.stepH,reach:i,segment:segAt(g,chosen.x).i});
+  }
+  reachResults[i]={...(reachResults[i]||{control,submerged:false}),super:sp,sub:bp,jump,selected};
+ }
+ let last=g.reaches.length-1;
+ if(!reachResults[last].selected){let sp=superProfiles[last];reachResults[last]={...reachResults[last],super:sp,sub:null,jump:{idx:null,reason:'Aval torrentiel'},selected:sp.data.filter(Boolean).map(v=>({...v,z:contZAt(g,v.x)-last*p.stepH,reach:last,segment:segAt(g,v.x).i}))};warnings.push('Profondeur aval ≤ critique : condition aval non pilotante pour la branche torrentielle ; profil aval basé sur le contrôle amont.');}
+ let points=reachResults.flatMap(r=>r.selected||[]),maxDepth=points.length?Math.max(...points.map(t=>t.y)):null,minFree=maxDepth===null?null:p.height-maxDepth;
+ if(jumps.length===0)warnings.push('Aucun ressaut intérieur identifié pour ces conditions. Ne pas dessiner un ressaut arbitrairement.');
+ if(points.some(v=>v.y>p.height))warnings.push('Débordement sur une partie du profil : géométrie à revoir et effets hors section à modéliser.');
+ if(points.length<g.reaches.reduce((acc,r)=>acc+Math.max(2,Math.min(1600,Math.ceil(r.len/Math.max(p.dx,p.length/4800))))+1,0))warnings.push('Des points du profil calculé sont manquants : résultat incomplet, revoir les conditions aux limites.');
+ return {...g,p,yc,yn,points,reaches:reachResults,jumps,maxDepth,minFree,notes:[...new Set(notes)],warnings:[...new Set(warnings)]};
+}
+// END HYDRAULICS
+const $=id=>document.getElementById(id);
+const defaults={project:'Fossé pluvial — scénario de ressaut',flow:.38,shape:'trapezoid',bottom:.7,side:1,height:1.2,rough:.035,length:80,slope:8,zup:100,stepsOn:true,stepH:.3,spacing:10,dropLoss:.08,multiOn:false,segN:2,seg1Len:30,seg1Slope:8,seg2Len:25,seg2Slope:6,seg3Len:15,seg3Slope:4,seg4Len:10,seg4Slope:3,upMode:'critical',upDepth:.15,tail:.7,dx:.25,energyOn:true,criticalOn:true,camera:34,confirmFree:.20,confirmVmin:.40,confirmVmax:3.00,confirmFrMax:2.50};
+const limits={flow:[.0001,500],bottom:[0,100],side:[0,10],height:[.05,30],rough:[.005,.25],length:[1,20000],slope:[0,100],zup:[-10000,10000],stepH:[.01,20],spacing:[.2,20000],dropLoss:[0,1],segN:[1,4],seg1Len:[.5,20000],seg1Slope:[0,100],seg2Len:[.5,20000],seg2Slope:[0,100],seg3Len:[.5,20000],seg3Slope:[0,100],seg4Len:[.5,20000],seg4Slope:[0,100],upDepth:[.001,30],tail:[.001,30],dx:[.05,100],camera:[17,60],confirmFree:[0,5],confirmVmin:[0,10],confirmVmax:[.1,25],confirmFrMax:[.5,10]};
+const nums=Object.keys(limits),fields=Object.keys(defaults),fmt=(v,d=2)=>Number.isFinite(v)?new Intl.NumberFormat('fr-FR',{minimumFractionDigits:d,maximumFractionDigits:d}).format(v):'—',esc=s=>String(s).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+const txt=(x,y,s,size=12,color='#385873',anchor='start',more='')=>`<text x="${x}" y="${y}" font-family="system-ui,Segoe UI,Arial" font-size="${size}" fill="${color}" text-anchor="${anchor}" ${more}>${esc(s)}</text>`;
+const line=(a,b,c,d,color='#cbdce7',w=1,dash='')=>`<line x1="${a}" y1="${b}" x2="${c}" y2="${d}" stroke="${color}" stroke-width="${w}" ${dash?`stroke-dasharray="${dash}"`:''}/>`;
+function svg(w,h,body,label){return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}" role="img" aria-label="${esc(label)}"><defs><linearGradient id="earth" x2="0.4" y2="1"><stop stop-color="#d6c4a1"/><stop offset="1" stop-color="#94744b"/></linearGradient><linearGradient id="water" x2="0.15" y2="1"><stop stop-color="#90e6f9"/><stop offset=".40" stop-color="#159fca"/><stop offset="1" stop-color="#075480"/></linearGradient><linearGradient id="grass" x2="0" y2="1"><stop stop-color="#a4c58b"/><stop offset="1" stop-color="#587d49"/></linearGradient><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#d5ecfa"/><stop offset="1" stop-color="#fcf4e4"/></linearGradient><filter id="shade"><feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity=".19"/></filter></defs>${body}</svg>`;}
+const poly=(pts,fill,stroke='none',sw=1,more='')=>`<polygon points="${pts.map(q=>q.map(v=>Number(v).toFixed(2)).join(',')).join(' ')}" fill="${fill}" stroke="${stroke}" stroke-width="${sw}" ${more}/>`;
+let state={...defaults},last=null,drawn={},picked=null;
+function input(){let p={},strings=new Set(['project','upMode','shape']);for(let k of fields){let e=$(k);p[k]=e.type==='checkbox'?e.checked:(strings.has(k)?e.value:Number(e.value));if(nums.includes(k)&&(!Number.isFinite(p[k])||e.value.trim()===''||p[k]<limits[k][0]||p[k]>limits[k][1]))throw Error('Paramètre invalide : '+(e.labels?.[0]?.textContent||k).trim());}if(p.shape==='triangular')p.bottom=0;if(p.shape==='rectangular')p.side=0;if(p.multiOn){let n=Math.max(1,Math.min(4,Math.round(p.segN))),L=0,D=0;for(let i=1;i<=n;i++){L+=p['seg'+i+'Len'];D+=p['seg'+i+'Len']*p['seg'+i+'Slope']/100;}p.length=L;p.slope=L>0?100*D/L:0;}return p;}
+function syncUi(){let shp=$('shape').value,multi=$('multiOn').checked;$('upDepth').disabled=$('upMode').value!=='imposed';$('bottom').disabled=shp==='triangular';$('side').disabled=shp==='rectangular';$('segN').disabled=!multi;for(let i=1;i<=4;i++){let on=multi&&i<=Number($('segN').value||1);$('seg'+i+'Len').disabled=!on;$('seg'+i+'Slope').disabled=!on;}}
+function metric(id,val,bad=false){$(id).textContent=val;if(id==='free')$('freeCard').classList.toggle('bad',bad);}
+function buildAnalysis(c){
+ const p=c.p, pts=(c.points||[]).map(q=>({...q,vel:Number.isFinite(q.vel)?q.vel:V(q.y,p),fr:Number.isFinite(q.fr)?q.fr:Fr(q.y,p)})).sort((a,b)=>a.x-b.x);
+ const ynLocal=Number.isFinite(c.yn)&&!c.dynamic?c.yn:normal(c.sb,p);
+ let vmax=0,vmin=Infinity,frmax=0,depthmax=0;
+ for(let q of pts){let av=Math.abs(q.vel||0),af=Math.abs(q.fr||0);if(av>vmax)vmax=av;if(av<vmin)vmin=av;if(af>frmax)frmax=af;if(q.y>depthmax)depthmax=q.y;}
+ if(!Number.isFinite(vmin))vmin=null;
+ const remous=[];let start=null,lastPt=null,threshold=Number.isFinite(ynLocal)?Math.max(.03,.05*ynLocal):.03;
+ for(let q of pts){let on=Number.isFinite(ynLocal)&&q.reg==='sub'&&q.y>ynLocal+threshold;
+  if(on&&!start)start={start:q.x,end:q.x,maxY:q.y,maxRise:q.y-ynLocal,reach:q.reach};
+  if(on&&start){start.end=q.x;if(q.y>start.maxY)start.maxY=q.y;if(q.y-ynLocal>start.maxRise)start.maxRise=q.y-ynLocal;start.reach=q.reach;}
+  if(!on&&start){if(lastPt)start.end=lastPt.x;remous.push({...start,length:Math.max(0,start.end-start.start)});start=null;}
+  lastPt=q;
+ }
+ if(start){if(lastPt)start.end=lastPt.x;remous.push({...start,length:Math.max(0,start.end-start.start)});}
+ const drowned=(c.reaches||[]).filter(r=>r&&r.submerged).length;
+ const checks=[];const push=(label,value,target,status,note)=>checks.push({label,value,target,status,note});
+ let freeStat=c.minFree<0?'bad':(c.minFree<p.confirmFree?'warn':'ok');
+ push('Revanche disponible',Number.isFinite(c.minFree)?fmt(c.minFree,3)+' m':'—','≥ '+fmt(p.confirmFree,2)+' m',freeStat,freeStat==='ok'?'La ligne d’eau reste sous la revanche cible.':(c.minFree<0?'Débordement calculé : la section est insuffisante.':'Revanche positive mais inférieure à la cible.'));
+ let vminStat=vmin===null?'warn':(vmin<p.confirmVmin?'warn':'ok');
+ push('Vitesse minimale',vmin===null?'—':fmt(vmin,2)+' m/s','≥ '+fmt(p.confirmVmin,2)+' m/s',vminStat,vminStat==='ok'?'Auto-curage a priori satisfaisant.':'Risque d’envasement ou de dépôt à confirmer.');
+ let vRatio=vmax/Math.max(p.confirmVmax,1e-9),vmaxStat=vRatio>1.20?'bad':(vRatio>1?'warn':'ok');
+ push('Vitesse maximale',fmt(vmax,2)+' m/s','≤ '+fmt(p.confirmVmax,2)+' m/s',vmaxStat,vmaxStat==='ok'?'Compatible avec le seuil saisi.':'Vitesse élevée : vérifier érosion, protection et stabilité.');
+ let frStat=frmax>p.confirmFrMax*1.15?'bad':(frmax>p.confirmFrMax?'warn':'ok');
+ push('Froude maximal',fmt(frmax,2),'≤ '+fmt(p.confirmFrMax,2),frStat,frStat==='ok'?'Régime compatible avec le critère choisi.':'Écoulement très rapide : vérifier dissipation et transition.');
+ let remStat=remous.length===0?'ok':((c.minFree>=p.confirmFree&&remous.every(z=>z.maxY<=p.height-p.confirmFree+1e-9))?'warn':'bad');
+ push('Zones de remous',remous.length?String(remous.length):'Aucune',remous.length?'Conserver dans le fossé':'Aucune exigence',remStat,remous.length?`Influence aval sur ${fmt(remous.reduce((s,z)=>s+z.length,0),1)} m ; localiser sur le profil.`:'Pas de remous marqué au sens du critère simplifié.');
+ let drStat=drowned>0?'warn':'ok';
+ push('Redents noyés',String(drowned),'= 0 souhaité',drStat,drowned?'Au moins un redent est sous influence aval : vérifier pertes et ouvrages.':'Aucun redent noyé détecté.');
+ let jumpStat=c.jumps.length===0?'warn':'ok';
+ push('Localisation des ressauts',c.jumps.length?c.jumps.map(j=>'PK '+fmt(j.x,1)).join(' · '):'Aucun','Localisation explicite si présents',jumpStat,c.jumps.length?'Les positions sont visibles sur le profil, le plan et la 3D.':'Pas de ressaut intérieur sous ces hypothèses ; ce n’est pas forcément un défaut.');
+ const status=checks.some(r=>r.status==='bad')?'bad':(checks.some(r=>r.status==='warn')?'warn':'ok');
+ const label=status==='ok'?'Dimensionnement a priori satisfaisant':(status==='warn'?'Dimensionnement à surveiller':'Dimensionnement à revoir');
+ return {ynLocal,pts,vmax,vmin,frmax,depthmax,remous,drowned,checks,status,label};
+}
+function statusBadge(status,label){return `<span class="badge ${status}">${label}</span>`;}
+function renderDiagnostics(c){
+ const a=buildAnalysis(c),target=c.dynamic?('Instant simulé · Q = '+fmt(c.p.flow,3)+' m³/s'):('Calcul permanent · Q = '+fmt(c.p.flow,3)+' m³/s');
+ $('confirmSummary').innerHTML=`${statusBadge(a.status,a.label)}<span class="tiny">${esc(target)}</span>`;
+ const map={ok:'Conforme au critère saisi',warn:'À surveiller',bad:'À revoir'};
+ $('confirmText').textContent=(a.status==='ok'?'Le fossé paraît correctement dimensionné pour les seuils saisis.':(a.status==='warn'?'Le fossé fonctionne mais certains points méritent vérification.':'Le fossé ne satisfait pas le pré-diagnostic ; revoir la section, la pente, les redents ou la condition aval.'))+' Cet outil ne remplace pas une validation hydraulique détaillée.';
+ $('confirmTable').innerHTML=a.checks.map(r=>`<tr><td>${esc(r.label)}</td><td>${esc(r.value)}</td><td>${esc(r.target)}</td><td>${statusBadge(r.status,map[r.status])}</td><td>${esc(r.note)}</td></tr>`).join('');
+ $('remousSummary').innerHTML=a.remous.length?`${a.remous.length} zone(s) de remous repérées : ${a.remous.map((z,i)=>`<span class="zone">Z${i+1} · PK ${fmt(z.start,1)}–${fmt(z.end,1)}</span>`).join(' ')}<span class="tiny">Surhausse évaluée par rapport à yₙ pour la même géométrie et le même débit.</span>`:'Aucune zone de remous marquée au sens du critère simplifié (surhausse de la ligne d’eau au-dessus de yₙ en régime fluvial).';
+ $('remousTable').innerHTML=a.remous.length?a.remous.map((z,i)=>`<tr><td>Z${i+1}</td><td>${fmt(z.start,2)}</td><td>${fmt(z.end,2)}</td><td>${fmt(z.length,2)}</td><td>${fmt(z.maxY,3)}</td><td>${fmt(z.maxRise,3)}</td><td>${Number.isFinite(z.reach)?z.reach+1:'—'}</td></tr>`).join(''):'<tr><td colspan="7">Aucune zone de remous marquée pour cette configuration.</td></tr>';
+ return a;
+}
+
+
+function renderDesignSummary(c){
+ const p=c.p,g=c,b=bEff(p),s=sEff(p),useDepth=Math.max(.001,p.height-p.confirmFree),fullArea=A(p.height,p),useArea=A(useDepth,p),topWidth=T(p.height,p),segCaps=(g.segments||[{i:0,len:p.length,nat:g.nat,sb:g.sb}]).map(seg=>({i:seg.i+1,len:seg.len,nat:100*seg.nat,sb:100*seg.sb,qUse:qManning(useDepth,Math.max(seg.sb,1e-12),p),qFull:qManning(p.height,Math.max(seg.sb,1e-12),p)}));
+ const ctrl=segCaps.reduce((a,b)=>a.qUse<=b.qUse?a:b), util=ctrl.qUse>0?100*p.flow/ctrl.qUse:Infinity;
+ const sideTxt=p.shape==='rectangular'?'Parois verticales':`Talus 1V / ${fmt(s,2)}H`;
+ const cards=[
+  ['Géométrie du fossé',`Forme : <strong>${esc(shapeLabel(p))}</strong><br>Largeur fond : <strong>${fmt(b,2)} m</strong><br>${esc(sideTxt)}<br>Profondeur totale H : <strong>${fmt(p.height,2)} m</strong><br>Largeur en tête : <strong>${fmt(topWidth,2)} m</strong>`],
+  ['Caractéristiques des redents',p.stepsOn?`Nombre : <strong>${g.n}</strong><br>Entraxe : <strong>${fmt(p.spacing,2)} m</strong><br>Hauteur d'un redent : <strong>${fmt(p.stepH,2)} m</strong><br>Dénivelée totale des redents : <strong>${fmt(g.totalStepDrop,2)} m</strong><br>Perte locale K : <strong>${fmt(p.dropLoss,2)}</strong>`:'Aucun redent activé.'],
+  ['Revanche libre laissée',`Tirant d'eau max : <strong>${fmt(c.maxDepth,3)} m</strong><br>Revanche libre : <strong>${fmt(c.minFree,3)} m</strong><br>Revanche cible : <strong>${fmt(p.confirmFree,2)} m</strong><br>Hauteur utile retenue : <strong>${fmt(useDepth,3)} m</strong>`],
+  ['Capacité du fossé',`Débit de projet : <strong>${fmt(p.flow,3)} m³/s</strong><br>Capacité utile contrôlante : <strong>${fmt(ctrl.qUse,3)} m³/s</strong><br>Capacité plein bord contrôlante : <strong>${fmt(ctrl.qFull,3)} m³/s</strong><br>Taux d'utilisation : <strong>${fmt(util,1)} %</strong><br>Profil limitant : <strong>P${ctrl.i}</strong>`],
+  ['Section hydraulique',`Section utile : <strong>${fmt(useArea,3)} m²</strong><br>Section plein bord : <strong>${fmt(fullArea,3)} m²</strong><br>Pente naturelle moyenne : <strong>${fmt(100*g.nat,2)} %</strong><br>Pente aménagée moyenne : <strong>${fmt(100*g.sb,2)} %</strong>`],
+  ['Profils longitudinaux',`${g.profileSegments.length} profil(s) pris en compte.<br>Longueur totale : <strong>${fmt(p.length,2)} m</strong><br>Dénivelée naturelle totale : <strong>${fmt(g.totalDrop,2)} m</strong><br>Cote aval du terrain : <strong>${fmt(g.zout,3)} m</strong>`]
+ ];
+ $('designSummary').innerHTML=cards.map(([t,b])=>`<div class="miniCard"><h4>${t}</h4><p>${b}</p></div>`).join('');
+ $('segTable').innerHTML=segCaps.map(sg=>`<tr><td>P${sg.i}</td><td>${fmt(sg.len,2)}</td><td>${fmt(sg.nat,2)}</td><td>${fmt(sg.sb,2)}</td><td>${fmt(sg.qUse,3)}</td><td>${fmt(sg.qFull,3)}</td></tr>`).join('');
+}
+function calculate(){temporalStop();try{syncUi();state=input();last=solve(state);$('error').textContent='';$('projectTitle').textContent=state.project||'Projet sans titre';render(last);$('status').textContent=`${last.points.length} sections · ${last.reaches.length} tronçon(s) · calcul permanent`;try{$('tmPlot').innerHTML=temporalPlot(0);}catch(e){}try{localStorage.setItem('fosse_ep_v5_autosave',JSON.stringify(state));}catch(e){}}catch(err){last=null;$('error').textContent=err.message;$('status').textContent='Corriger les données';$('alerts').innerHTML=`<div class="notice bad"><h3>Simulation interrompue</h3><p>${esc(err.message)}</p></div>`;for(let id of ['yn','yc','jumpN','jumpPK','free'])$(id).textContent='—';for(let id of ['profileFig','sceneFig','sectionFig','planFig','results','jumpsResults','designSummary'])$(id).innerHTML='';$('segTable').innerHTML='<tr><td colspan="6">Aucun profil calculé.</td></tr>';drawn={};}}
+function render(c){let p=c.p;metric('yn',c.yn===null?'Non défini':fmt(c.yn,3)+' m');metric('yc',fmt(c.yc,3)+' m');metric('jumpN',String(c.jumps.length));metric('jumpPK',c.jumps.length?fmt(c.jumps[0].x,2)+' m':'Aucun');metric('free',fmt(c.minFree,2)+' m',c.minFree!==null&&c.minFree<0);
+ let alerts=[];if(c.jumps.length)alerts.push(`<div class="notice"><h3>Ressaut hydraulique localisé · calcul 1D</h3><p>${c.jumps.map((j,i)=>`R${i+1} : PK <strong>${fmt(j.x,2)} m</strong>, y₁ = ${fmt(j.y1,3)} m, y₂ = ${fmt(j.y2,3)} m, Fr₁ = ${fmt(j.fr1,2)} (ΔE = ${fmt(j.energyLoss,3)} m).`).join(' ')} Position conditionnelle à la profondeur aval et aux pertes retenues ; longueur réelle non calculée.</p></div>`);
+ if(!c.jumps.length)alerts.push('<div class="notice"><h3>Aucun ressaut intérieur détecté</h3><p>Pour ces hypothèses et cette condition aval, le programme ne localise pas de ressaut à l’intérieur des tronçons. Essayer « Exemple ressaut » ou modifier la profondeur aval ; ne pas inventer un ressaut.</p></div>');
+ if(c.warnings.length)alerts.push(`<div class="notice warning"><h3>Vérifications nécessaires (${c.warnings.length})</h3>${c.warnings.slice(0,6).map(w=>`<p>• ${esc(w)}</p>`).join('')}${c.warnings.length>6?`<p>… ${c.warnings.length-6} autre(s) alerte(s).</p>`:''}</div>`);
+ if(c.notes.length)alerts.push(`<details class="notice" style="font-size:11px"><summary>Diagnostics numériques (${c.notes.length}) — branches exploratoires interrompues près de y꜀</summary>${c.notes.slice(0,16).map(s=>`<p>${esc(s)}</p>`).join('')}${c.notes.length>16?'<p>Diagnostics supplémentaires masqués.</p>':''}</details>`);
+ $('alerts').innerHTML=alerts.join('');
+ drawn.profile=profile(c);drawn.scene=scene(c);drawn.section=section(c);drawn.plan=plan(c);
+ $('profileFig').innerHTML=drawn.profile;$('sceneFig').innerHTML=drawn.scene;$('sectionFig').innerHTML=drawn.section;$('planFig').innerHTML=drawn.plan;
+ const row=(k,v)=>`<div class="r"><span>${esc(k)}</span><strong>${esc(v)}</strong></div>`;
+ $('results').innerHTML=[['Débit Q',fmt(p.flow,3)+' m³/s'],['Forme de section',shapeLabel(p)],['Longueur totale',fmt(p.length,2)+' m'],['Pente naturelle moyenne',fmt(p.slope,3)+' %'],['Pente aménagée moyenne',fmt(c.sb*100,3)+' %'],['Nombre de chutes',String(c.n)],['Dénivelée totale terrain',fmt(c.totalDrop,3)+' m'],['Cote aval',fmt(c.zout,3)+' m'],['Profondeur aval imposée',fmt(p.tail,3)+' m'],['Pas cible',fmt(p.dx,2)+' m']].map(x=>row(...x)).join('');
+ const diag=renderDiagnostics(c);renderDesignSummary(c);
+ $('jumpsResults').innerHTML=[['Ressauts internes',String(c.jumps.length)],['Contrôle amont',p.upMode==='critical'?'Critique approché':'Torrentiel imposé'],['Contrôle aval',p.tail>c.yc?'Fluvial imposé':'Aval torrentiel / non pilotant'],['y max calculée',fmt(c.maxDepth,3)+' m'],['Largeur en tête',fmt(T(p.height,p),2)+' m'],['Risque de débordement',c.minFree<0?'OUI — revoir le projet':'Pas détecté sur la section'],['Zones de remous',diag.remous.length?diag.remous.map((z,i)=>'Z'+(i+1)+' : '+fmt(z.start,1)+'-'+fmt(z.end,1)+' m').join(' · '):'Aucune marquée'],['Redents noyés',diag.drowned?'Oui : '+diag.drowned:'Aucun détecté']].map(x=>row(...x)).join('');
+ $('jumpTable').innerHTML=c.jumps.length?c.jumps.map((j,i)=>`<tr><td>${i+1}</td><td>${fmt(j.x,2)}</td><td>${fmt(j.y1,3)}</td><td>${fmt(j.y2,3)}</td><td>${fmt(j.fr1,2)}</td><td>${fmt(j.energyLoss,3)}</td><td>${j.reach+1}</td></tr>`).join(''):'<tr><td colspan="7">Aucun ressaut intérieur calculé pour ces conditions.</td></tr>';
+ $('pointInfo').innerHTML=picked!==null?pointText(c,picked):'Cliquez sur le profil pour inspecter les cotes, vitesses et Froude.';
+}
+function approxPoint(c,x){let a=c.points,lo=0,hi=a.length-1;while(lo<hi){let mid=(lo+hi)>>1;if(a[mid].x<x)lo=mid+1;else hi=mid;}let k=lo;if(k>0&&Math.abs(a[k-1].x-x)<Math.abs(a[k].x-x))k--;return a[k];}
+function pointText(c,x){let a=approxPoint(c,x);if(!a)return 'Aucune section calculée.';let seg='P'+((a.segment??segAt(c,a.x).i)+1);if(c.dynamic)return `<span>PK : <strong>${fmt(a.x,2)} m</strong></span><span>Profil : <strong>${seg}</strong></span><span>Fond : <strong>${fmt(a.z,3)} m</strong></span><span>Eau : <strong>${fmt(a.z+a.y,3)} m</strong></span><span>y : <strong>${fmt(a.y,3)} m</strong></span><span>Q local : <strong>${fmt(a.q,3)} m³/s</strong></span><span>V : <strong>${fmt(a.vel,2)} m/s</strong></span><span>Fr : <strong>${fmt(a.fr,2)}</strong></span>`;return `<span>PK : <strong>${fmt(a.x,2)} m</strong></span><span>Profil : <strong>${seg}</strong></span><span>Fond : <strong>${fmt(a.z,3)} m</strong></span><span>Eau : <strong>${fmt(a.z+a.y,3)} m</strong></span><span>y : <strong>${fmt(a.y,3)} m</strong></span><span>V : <strong>${fmt(V(a.y,c.p),2)} m/s</strong></span><span>Fr : <strong>${fmt(Fr(a.y,c.p),2)}</strong></span><span>Régime : <strong>${a.reg==='sub'?'fluvial':'torrentiel'}</strong></span>`;}
+function profile(c){let W=1280,H=465,L=86,R=1214,U=43,D=375,p=c.p;
+ let zs=c.points.flatMap(pt=>[pt.z,pt.z+pt.y,pt.z+p.height,...(p.energyOn?[pt.z+E(pt.y,p)]:[])]);zs.push(p.zup,c.zout);let zmin=Math.min(...zs)-.2,zmax=Math.max(...zs)+.35;if(zmax-zmin<1){zmax+=.5;zmin-=.5;}const X=x=>L+(x/p.length)*(R-L),Y=z=>D-(z-zmin)/(zmax-zmin)*(D-U);
+ let s=`<rect width="${W}" height="${H}" fill="#fbfdff"/>`;
+ for(let i=0;i<=7;i++){let z=zmin+(zmax-zmin)*i/7,y=Y(z);s+=line(L,y,R,y,'#e2edf3')+txt(L-10,y+4,fmt(z,2),10,'#71879a','end');}
+ for(let i=0;i<=10;i++){let x=i*p.length/10,sx=X(x);s+=line(sx,U,sx,D,'#edf2f5')+txt(sx,D+20,fmt(x,1),10,'#678195','middle');}
+ s+=txt(15,21,'Cote (m)',11)+txt((L+R)/2,439,'Chaînage PK (m) → aval',12,'#536e83','middle');
+ let bpath='';for(let r of c.reaches){let rr=c.reaches.indexOf(r),first=c.reaches[rr].selected[0],last=r.selected.at(-1);if(!first||!last)continue;bpath+=(bpath?' ':'')+`M${X(r.selected[0].x)} ${Y(r.selected[0].z)}`+` L${X(last.x)} ${Y(last.z)}`;if(rr<c.reaches.length-1){let rn=c.reaches[rr+1].selected[0];if(rn)bpath+=` L${X(rn.x)} ${Y(rn.z)}`;}}
+ s+=`<path d="${bpath}" stroke="#976a3d" stroke-width="3" fill="none" stroke-linejoin="round"/>`;
+ for(let r of c.reaches){let pts=r.selected;if(pts.length<2)continue;
+ let seg=pts.map((v,i)=>[v.x,v.z+v.y]);let jump=r.jump;if(jump?.x!==undefined){let k=jump.idx;seg=[];for(let i=0;i<pts.length;i++){if(i===k+1){let zz=p.zup-c.sb*jump.x-c.reaches.indexOf(r)*p.stepH;seg.push([jump.x,zz+jump.y1],[jump.x,zz+jump.y2]);}seg.push([pts[i].x,pts[i].z+pts[i].y]);}}
+ let mk=ar=>ar.map((v,i)=>`${i===0?'M':'L'}${X(v[0]).toFixed(2)} ${Y(v[1]).toFixed(2)}`).join(' ');
+ s+=`<path d="${mk(seg)}" stroke="#0985c3" stroke-width="3.2" fill="none" stroke-linejoin="round"/>`;
+ if(p.criticalOn)s+=`<path d="${mk(pts.map(v=>[v.x,v.z+c.yc]))}" stroke="#1b9a77" stroke-width="1.6" stroke-dasharray="7 5" fill="none"/>`;
+ if(p.energyOn)s+=`<path d="${mk(pts.map(v=>[v.x,v.z+E(v.y,p)]))}" stroke="#cb7b20" stroke-width="1.5" stroke-dasharray="6 5" fill="none"/>`;
+ }
+ let remA=buildAnalysis(c);for(let [zi,z] of remA.remous.entries()){let zonePts=c.points.filter(v=>v.x>=z.start-1e-9&&v.x<=z.end+1e-9);if(zonePts.length>1){let d=zonePts.map((v,i)=>`${i===0?'M':'L'}${X(v.x).toFixed(2)} ${Y(v.z+v.y).toFixed(2)}`).join(' ');s+=`<path d="${d}" stroke="#d48423" stroke-width="7" stroke-linecap="round" opacity=".35" fill="none"/>`;let xm=X((z.start+z.end)/2),yy=Y(zonePts[Math.floor(zonePts.length/2)].z+zonePts[Math.floor(zonePts.length/2)].y);s+=line(X(z.start),U,X(z.start),D,'#d48423',1,'4 4')+line(X(z.end),U,X(z.end),D,'#d48423',1,'4 4')+txt(xm,Math.max(U+18,yy-12),`Remous Z${zi+1}`,11,'#a26516','middle',`paint-order="stroke" stroke="#fff8ef" stroke-width="4"`);}}
+ for(let j of c.jumps){let r=c.reaches[j.reach],z=p.zup-c.sb*j.x-j.reach*p.stepH,x=X(j.x);let low=Math.min(Y(z+j.y1),Y(z+j.y2)),high=Math.max(Y(z+j.y1),Y(z+j.y2));s+=line(x,low,x,high,'#b8453c',5)+`<circle cx="${x}" cy="${low}" r="5" fill="#b8453c"/>`+txt(x+8,Math.max(U+14,low-5),`Ressaut PK ${fmt(j.x,2)}`,11,'#a74137');}
+ for(let i=0;i<c.n;i++){let x=X(c.xs[i+1]);s+=`<circle cx="${x}" cy="${Y(p.zup-c.sb*c.xs[i+1]-i*p.stepH)}" r="3.1" fill="#a66539"/>`;}
+ s+=`<rect x="${L}" y="${U}" width="${R-L}" height="${D-U}" fill="none" stroke="#d5e3eb" stroke-width="1"/>`;
+ s+=`<rect x="${L}" y="${U}" width="${R-L}" height="${D-U}" fill="transparent" style="cursor:crosshair" data-profile-click="1"/>`;
+ if(picked!==null){let x=X(Math.max(0,Math.min(p.length,picked)));s+=line(x,U,x,D,'#60788d',1,'4 5');}
+ return svg(W,H,s,'Profil hydraulique calculé de fossé EP');
+}
+function section(c){
+ let W=930,H=405,p=c.p,fy=325,ty=72,cx=310,topW=Math.max(T(p.height,p),0.05),scale=Math.min(240/p.height,500/topW),y=Math.min(c.maxDepth??c.yc,p.height),free=Math.max(0,p.height-y),s=sEff(p),b=bEff(p);
+ function xAt(yy,left){if(p.shape==='rectangular')return cx+(left?-b/2:b/2)*scale;if(p.shape==='triangular'){let hw=s*yy*scale;return cx+(left?-hw:hw);}let hw=(b/2+s*yy)*scale;return cx+(left?-hw:hw);} 
+ let xl=xAt(p.height,true),xr=xAt(p.height,false),bl=xAt(0,true),br=xAt(0,false),wl=xAt(y,true),wr=xAt(y,false),wy=fy-y*scale,freeY=fy-p.height*scale;
+ let polyOuter=[[40,ty],[xl,ty],[bl,fy],[br,fy],[xr,ty],[620,ty],[620,358],[40,358]],waterPts=p.shape==='triangular'?[[cx,fy],[wl,wy],[wr,wy]]:[[bl,fy],[wl,wy],[wr,wy],[br,fy]];
+ let sSvg=`<rect width="${W}" height="${H}" fill="#fbfdff"/>`+poly(polyOuter,'url(#earth)','#93744e',1.5)+poly(waterPts,'url(#water)','#1288b5',1.2)+line(wl,wy,wr,wy,'#087bb6',2.8)+`<path d="M${xl} ${ty}L${bl} ${fy}L${br} ${fy}L${xr} ${ty}" fill="none" stroke="#6e5138" stroke-width="3"/>`;
+ if(c.yc<p.height){let ycY=fy-c.yc*scale;sSvg+=line(xAt(c.yc,true),ycY,xAt(c.yc,false),ycY,'#138f75',2,'7 4');}
+ sSvg+=line(xl,48,xr,48,'#53728b',1.2)+txt(cx,39,`Largeur en tête = ${fmt(topW,2)} m`,14,'#234760','middle');
+ sSvg+=line(bl,369,br,369,'#58738a',1.2)+line(bl,fy,bl,376,'#8ca1b2')+line(br,fy,br,376,'#8ca1b2')+txt(cx,391,`Largeur au fond = ${fmt(b,2)} m`,13,'#244a64','middle');
+ sSvg+=line(640,freeY,640,fy,'#55758c',1.3)+line(634,freeY,646,freeY,'#55758c')+line(634,fy,646,fy,'#55758c')+txt(650,(freeY+fy)/2,`H = ${fmt(p.height,2)} m`,12);
+ sSvg+=line(675,wy,675,fy,'#0b89ba',1.2)+line(669,wy,681,wy,'#0b89ba')+line(669,fy,681,fy,'#0b89ba')+txt(684,(wy+fy)/2,`y = ${fmt(y,3)} m`,12,'#0b73a1');
+ sSvg+=line(710,freeY,710,wy,'#b57a1f',1.2,'4 3')+line(704,freeY,716,freeY,'#b57a1f')+line(704,wy,716,wy,'#b57a1f')+txt(719,(freeY+wy)/2,`Revanche = ${fmt(free,3)} m`,12,'#9b6518');
+ sSvg+=`<rect x="728" y="74" width="182" height="232" rx="10" fill="#eef6fb" stroke="#d4e3ed"/>`;
+ [['SECTION',14],['Forme : '+shapeLabel(p),52],['y calculée max : '+fmt(c.maxDepth,3)+' m',82],['y critique : '+fmt(c.yc,3)+' m',112],['y normale : '+fmt(c.yn,3)+' m',142],['Revanche libre : '+fmt(c.minFree,3)+' m',172],['Section utile : '+fmt(A(Math.max(.001,p.height-p.confirmFree),p),3)+' m²',202],['Capacité plein bord : '+fmt(qManning(p.height,Math.max(c.sb,1e-12),p),3)+' m³/s',232]].forEach(([label,offset])=>{sSvg+=txt(742,74+offset,label,12,offset===14?'#23516f':'#416078');});
+ sSvg+=txt(45,401,c.minFree<0?'Débordement : eau coupée à la crête dans le dessin ; valeur exacte dans le tableau.':'La coupe distingue la géométrie du fossé, le tirant d’eau et la revanche libre.',10,c.minFree<0?'#b04439':'#72889a');
+ return svg(W,H,sSvg,'Coupe type du fossé');}
+
+function plan(c){let W=1150,H=415,p=c.p,l=85,r=1060,mid=210,w=122,head=T(p.height,p);let X=x=>l+(x/p.length)*(r-l),Yt=t=>mid+t/head*w*2;
+ let s=`<rect width="1150" height="415" fill="#fbfdff"/>`;
+ s+=`<rect x="${l}" y="${mid-w}" width="${r-l}" height="${2*w}" fill="#c8d8ae" stroke="#75965f" rx="2"/>`;
+ s+=poly([[l,mid-w],[r,mid-w],[r,Yt(-p.bottom/2)],[l,Yt(-p.bottom/2)]],'#d8c59f');s+=poly([[l,Yt(p.bottom/2)],[r,Yt(p.bottom/2)],[r,mid+w],[l,mid+w]],'#c0ae87');
+ s+=`<rect x="${l}" y="${Yt(-p.bottom/2)}" width="${r-l}" height="${Yt(p.bottom/2)-Yt(-p.bottom/2)}" fill="#af9169"/>`;
+ for(let reach of c.reaches){let arr=reach.selected.filter((_,i)=>i%Math.max(1,Math.floor(reach.selected.length/80))===0||i===reach.selected.length-1);let topedge=arr.map(v=>[X(v.x),Yt(-T(Math.min(v.y,p.height),p)/2)]),bottomedge=arr.slice().reverse().map(v=>[X(v.x),Yt(T(Math.min(v.y,p.height),p)/2)]);s+=poly([...topedge,...bottomedge],'#40b5d1','none',1,'opacity=".77"');}
+ let remA=buildAnalysis(c);for(let [zi,z] of remA.remous.entries()){let xs=X(z.start),xe=X(z.end);s+=`<rect x="${xs}" y="${mid-w-8}" width="${Math.max(3,xe-xs)}" height="${2*w+16}" fill="#f5c680" opacity=".35"/>`+txt((xs+xe)/2,mid-w-16,'Z'+(zi+1),10,'#9e641b','middle');}
+ for(let i=0;i<c.n;i++){let x=X(c.xs[i+1]);s+=line(x,mid-w,x,mid+w,'#966341',4);if(i%Math.max(1,Math.ceil(c.n/13))===0)s+=txt(x,mid-w-10,'R'+(i+1),10,'#8c5631','middle');}
+ s+=line(l,42,r,42,'#597487')+txt((l+r)/2,32,`Longueur totale : ${fmt(p.length,2)} m`,13,'#34536c','middle');
+ for(let i=0;i<=8;i++){let x=i*p.length/8,sx=X(x);s+=line(sx,mid+w+9,sx,mid+w+19,'#6d8b9d')+txt(sx,mid+w+36,'PK '+fmt(x,1),10,'#638095','middle');}
+ s+=txt(l,65,'AMONT',12)+txt(r,65,'AVAL →',12,'#34536c','end')+txt(l,400,'Vue en plan illustrative · ouvrages transversaux aux PK indiqués · largeur en tête = '+fmt(head,2)+' m',11,'#667e90');
+ return svg(W,H,s,'Vue en plan du fossé et de ses redents');}
+function scene(c){let W=1270,H=580,p=c.p,view=$('viewMode').value,reverse=view==='up',ang=p.camera*Math.PI/180,half=T(p.height,p)/2,cz= Math.sin(ang),zscale=75*(cz/.56),sign=reverse?-1:1;
+ let pos=x=>reverse?1-x/p.length:x/p.length;
+ function proj(x,t,delta){let d=pos(x),screenScale=300*(1-d)+66*d,center=632+sign*d*85,xx=center+t/(half+0.5)*screenScale,yy=496-d*(225+80*cz)-delta*zscale*(.97-.57*d);return [xx,yy];}
+ function locate(x,reachIdx){return p.zup-c.sb*x-reachIdx*p.stepH;}
+ let s=`<rect width="1270" height="580" fill="url(#sky)"/><circle cx="1090" cy="89" r="40" fill="#fff0b7" opacity=".65"/>`;
+ s+=poly([[0,274],[120,246],[296,261],[420,235],[626,248],[748,225],[922,249],[1130,227],[1270,263],[1270,580],[0,580]],'#bdccac','none',1,'opacity=".80"');
+ s+=poly([[0,345],[222,320],[485,333],[690,307],[930,340],[1270,321],[1270,580],[0,580]],'#91b17b');
+ for(let k=0;k<11;k++){let y=365+k*17,x0=30+k*8,x1=1240-k*22;s+=line(x0,y,x1,y-26,'#82a96f',1.1,'8 8');}
+ for(let k=0;k<9;k++){let cx=100+k*128,cy=294+(k%2)*10;s+=`<circle cx="${cx}" cy="${cy}" r="10" fill="#628b56"/><rect x="${cx-1.5}" y="${cy+9}" width="3" height="10" fill="#806448"/>`;}
+ s+=`<rect x="18" y="15" width="300" height="59" rx="11" fill="#113b4f" opacity=".86"/>`+txt(33,39,c.dynamic?'PERSPECTIVE 3D · ÉCOULEMENT TRANSITOIRE':'PERSPECTIVE 3D · ÉCOULEMENT SIMULÉ',12,'#e9fbff')+txt(33,60,reverse?'Depuis l’aval vers l’amont':'Depuis l’amont vers l’aval',11,'#b4e4f1');
+ let items=[];
+ for(let ri=0;ri<c.reaches.length;ri++){let r=c.reaches[ri],arr=r.selected.filter((v,i)=>i%Math.max(1,Math.ceil(r.selected.length/23))===0||i===r.selected.length-1);if(arr[0]?.x!==r.selected[0]?.x)arr.unshift(r.selected[0]);
+  for(let k=0;k<arr.length-1;k++){let q0=arr[k],q1=arr[k+1],x0=q0.x,x1=q1.x,z0=locate(x0,ri),z1=locate(x1,ri),delta0=z0-(p.zup-c.nat*x0),delta1=z1-(p.zup-c.nat*x1);
+   function corner(x,t,d){return proj(x,t,d);}
+   let land=half+3.6,b=p.bottom/2,h=half;
+   let surf=(a,b,aa,bb,fill)=>poly([corner(x0,a,delta0+aa),corner(x1,a,delta1+aa),corner(x1,b,delta1+bb),corner(x0,b,delta0+bb)],fill);
+   let qlandL=poly([corner(x0,-land,delta0+p.height),corner(x1,-land,delta1+p.height),corner(x1,-h,delta1+p.height),corner(x0,-h,delta0+p.height)],'#91b578');
+   let qlandR=poly([corner(x0,h,delta0+p.height),corner(x1,h,delta1+p.height),corner(x1,land,delta1+p.height),corner(x0,land,delta0+p.height)],'#8aaa69');
+   let bankL=poly([corner(x0,-h,delta0+p.height),corner(x1,-h,delta1+p.height),corner(x1,-b,delta1),corner(x0,-b,delta0)],'url(#earth)');
+   let bankR=poly([corner(x0,b,delta0),corner(x1,b,delta1),corner(x1,h,delta1+p.height),corner(x0,h,delta0+p.height)],'#b7a17b');
+   let bed=poly([corner(x0,-b,delta0),corner(x1,-b,delta1),corner(x1,b,delta1),corner(x0,b,delta0)],'#92764d');
+   let y0=Math.min(p.height,q0.y),y1=Math.min(p.height,q1.y),hw0=T(y0,p)/2,hw1=T(y1,p)/2;
+   let water=poly([corner(x0,-hw0,delta0+y0),corner(x1,-hw1,delta1+y1),corner(x1,hw1,delta1+y1),corner(x0,hw0,delta0+y0)],'url(#water)','#3cb5d1',.6,'opacity=".93"');
+   // pointillés argentés sur la lame d'eau : indices visuels de vitesse, non mesure des turbulences
+   let xm=(x0+x1)/2,ym=(y0+y1)/2,dm=(delta0+delta1)/2,rr=poly([proj(xm,-T(ym,p)/6,dm+ym+.006),proj(xm,-T(ym,p)/10,dm+ym+.006),proj(xm,T(ym,p)/10,dm+ym+.006),proj(xm,T(ym,p)/6,dm+ym+.006)],'#e5fdff','none',1,'opacity=".32"');
+   items.push({d:(pos(x0)+pos(x1))/2,body:qlandL+qlandR+bankL+bankR+bed+water+rr});
+  }
+ }
+ for(let i=0;i<c.n;i++){let x=c.xs[i+1],bef=locate(x,i),aft=locate(x,i+1),up=bef-(p.zup-c.nat*x),down=aft-(p.zup-c.nat*x),t=Math.min(half,half-.2),wall=poly([proj(x,-t,up),proj(x,t,up),proj(x,t,down),proj(x,-t,down)],'#a7a19a','#776d63',1),cap=poly([proj(x,-t,up+.04),proj(x,t,up+.04),proj(x,t,up-.06),proj(x,-t,up-.06)],'#e3ded0');
+ let mid=proj(x,0,down+.25),foam=`<ellipse cx="${mid[0]}" cy="${mid[1]}" rx="${Math.max(7,18*(1-pos(x)))}" ry="${Math.max(2,5*(1-pos(x)))}" fill="white" opacity=".82"/>`;
+ if(c.n<16||i%Math.ceil(c.n/14)===0)foam+=txt(mid[0],mid[1]-13,'R'+(i+1),10,'#533d2b','middle',`paint-order="stroke" stroke="#e4f4e5" stroke-width="3"`);
+ items.push({d:pos(x),body:wall+cap+foam});
+ }
+ let remA=buildAnalysis(c);for(let [zi,z] of remA.remous.entries()){let xm=(z.start+z.end)/2,zz=locate(xm,Math.max(0,Math.min(c.reaches.length-1,z.reach||0))),delta=zz-(p.zup-c.nat*xm),mid=proj(xm,0,delta+Math.min(p.height,z.maxY));let halo=`<ellipse cx="${mid[0]}" cy="${mid[1]}" rx="${Math.max(18,30*(1-pos(xm)))}" ry="${Math.max(7,16*(1-pos(xm)))}" fill="#ffd085" opacity=".35"/>`+txt(mid[0],mid[1]-14,`REMOUS Z${zi+1}`,12,'#9d6417','middle','paint-order="stroke" stroke="#fff7ea" stroke-width="4"');items.push({d:pos(xm)-.00005,body:halo});}
+ for(let j of c.jumps){let idx=j.reach,zb=locate(j.x,idx),delta=zb-(p.zup-c.nat*j.x),y1=Math.min(p.height,j.y1),y2=Math.min(p.height,j.y2),pt1=proj(j.x,-T(y1,p)/2,delta+y1),pt2=proj(j.x,T(y2,p)/2,delta+y2),mid=proj(j.x,0,delta+y2);
+ let foam=`<path d="M${pt1[0]} ${pt1[1]} Q${mid[0]} ${mid[1]-13} ${pt2[0]} ${pt2[1]}" stroke="#f7ffff" stroke-width="7" fill="none" opacity=".95"/>`+`<circle cx="${mid[0]}" cy="${mid[1]}" r="5" fill="#be5042"/>`+txt(mid[0]+14,mid[1]-17,`RESSAUT · PK ${fmt(j.x,1)}`,13,'#863a2d','start','paint-order="stroke" stroke="#fff" stroke-width="4"');
+ items.push({d:pos(j.x)-.0001,body:foam});}
+ items.sort((a,b)=>b.d-a.d);s+=items.map(v=>v.body).join('');
+ s+=`<rect x="854" y="15" width="390" height="72" rx="10" fill="#14394d" opacity=".87"/>`+txt(872,39,`Q = ${fmt(p.flow,3)} m³/s · ${c.n} redents`,12,'#eefaff')+txt(872,58,buildAnalysis(c).remous.length?`${buildAnalysis(c).remous.length} zone(s) de remous repérée(s)`:'Pas de remous marqué',11,'#ffdba4')+txt(872,76,c.jumps.length?`${c.jumps.length} ressaut(s) calculé(s) · mousse illustrative`:'Aucun ressaut localisé · écoulement figuré',11,'#b2e3f2');
+ s+=`<rect x="20" y="544" width="1230" height="24" rx="6" fill="#13364b" opacity=".76"/>`+txt(32,560,c.dynamic?'MAQUETTE PAYSAGÈRE INTERPRÉTATIVE · Saint-Venant 1D exploratoire · remous et ressauts localisés sans CFD':'MAQUETTE PAYSAGÈRE INTERPRÉTATIVE · 1D permanent · repérage visuel des remous et ressauts, sans CFD',11,'#e7f7fc');
+ return svg(W,H,s,'Perspective 3D illustrative du fossé calculé');
+}
+function download(name,text,mime){let blob=new Blob([text],{type:mime}),url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download=name;document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);}
+function slug(){return (state.project||'fosse_ep').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/gi,'-').replace(/^-|-$/g,'').slice(0,54)||'fosse_ep';}
+function save(){if(!last){alert('Compléter les paramètres avant de sauvegarder.');return;}download(slug()+'_FOSSE_EP_V5.json',JSON.stringify({application:'FOSSE EP',version:'5.0',temporal:{duration:Number($('tmDuration').value),base:Number($('tmBase').value),peak:Number($('tmPeak').value),peakAt:Number($('tmPeakAt').value)},savedAt:new Date().toISOString(),parameters:state,model:'1D permanent et instationnaire exploratoire ; diagnostics de dimensionnement, remous et ressauts approchés'},null,2),'application/json;charset=utf-8');$('status').textContent='Projet JSON exporté';}
+function exportCSV(){if(!last)return;let c=last,rows=['PK_m;troncon;cote_fond_m;tirant_eau_m;cote_eau_m;cote_energie_m;vitesse_m_s;Froude;regime;ressaut'];for(let [ri,r] of c.reaches.entries()){for(let q of r.selected){rows.push([q.x,ri+1,q.z,q.y,q.z+q.y,q.z+E(q.y,c.p),V(q.y,c.p),Fr(q.y,c.p),q.reg,c.jumps.some(j=>Math.abs(j.x-q.x)<c.p.dx/2)?'proximite':''].map(v=>typeof v==='number'?v.toFixed(5).replace('.',','):v).join(';'));}}for(let j of c.jumps){let z=approxPoint(c,j.x)?.z??(contZAt(c,j.x)-j.reach*c.p.stepH);for(let [y,reg] of [[j.y1,'avant_ressaut'],[j.y2,'apres_ressaut']])rows.push([j.x,j.reach+1,z,y,z+y,z+E(y,c.p),V(y,c.p),Fr(y,c.p),reg,'oui'].map(v=>typeof v==='number'?v.toFixed(5).replace('.',','):v).join(';'));}download(slug()+'_stations_FOSSE_EP_V5.csv','\uFEFF'+rows.join('\r\n'),'text/csv;charset=utf-8');}
+function populate(p){for(let k of fields){let el=$(k),v=(k in p?p[k]:defaults[k]);if(el.type==='checkbox')el.checked=Boolean(v);else el.value=v;}syncUi();picked=null;calculate();}
+$('saveBtn').addEventListener('click',save);$('csvBtn').addEventListener('click',exportCSV);$('csv2Btn').addEventListener('click',exportCSV);
+$('newBtn').addEventListener('click',()=>{if(confirm('Revenir aux paramètres de démonstration ? Enregistrez d’abord le projet actuel si nécessaire.'))populate(defaults);});
+$('exampleBtn').addEventListener('click',()=>populate({...defaults,project:'Démonstration — profils variables avec 7 redents',multiOn:true,segN:3,seg1Len:24,seg1Slope:9,seg2Len:34,seg2Slope:5.5,seg3Len:22,seg3Slope:3.5,tail:.7}));
+$('openBtn').addEventListener('click',()=>$('jsonFile').click());
+$('jsonFile').addEventListener('change',async e=>{let f=e.target.files?.[0];if(!f)return;try{let d=JSON.parse(await f.text());if(d.application!=='FOSSE EP'||!d.parameters||typeof d.parameters!=='object')throw Error('Ce fichier n’est pas un projet FOSSÉ EP.');let p={...defaults,...d.parameters};for(let k of nums)if(!Number.isFinite(p[k])||p[k]<limits[k][0]||p[k]>limits[k][1])throw Error('Valeur hors limites dans le JSON : '+k);if(!['critical','imposed'].includes(p.upMode))throw Error('Mode amont invalide.');if(!['trapezoid','rectangular','triangular'].includes(p.shape))throw Error('Forme de section invalide.');if(typeof p.project!=='string'||p.project.length>120)throw Error('Nom de projet invalide.');for(let k of ['stepsOn','energyOn','criticalOn','multiOn'])if(typeof p[k]!=='boolean')throw Error('Option invalide : '+k);if(d.temporal&&typeof d.temporal==='object')for(let [id,key] of [['tmDuration','duration'],['tmBase','base'],['tmPeak','peak'],['tmPeakAt','peakAt']]){if(Number.isFinite(d.temporal[key]))$(id).value=d.temporal[key];}populate(p);if(!last)throw Error('Paramètres importés incompatibles.');$('status').textContent='Projet ouvert : '+f.name;}catch(err){alert('Import impossible : '+err.message);}finally{e.target.value='';}});
+$('printBtn').addEventListener('click',()=>window.print());
+for(let el of document.querySelectorAll('[data-key]'))el.addEventListener(el.type==='checkbox'||el.tagName==='SELECT'?'change':'input',()=>{syncUi();if(el.id==='camera'&&last){state.camera=Number(el.value);$('sceneFig').innerHTML=drawn.scene=scene(temporal.active||last);return;}calculate();});
+$('viewMode').addEventListener('change',()=>{if(last)$('sceneFig').innerHTML=drawn.scene=scene(temporal.active||last);});
+for(let el of document.querySelectorAll('[data-export]'))el.addEventListener('click',()=>{let k=el.dataset.export;if(drawn[k])download(slug()+'_'+k+'_V5.svg',drawn[k],'image/svg+xml;charset=utf-8');});
+$('profileFig').addEventListener('click',event=>{if(!last)return;let active=temporal.active||last;let el=$('profileFig').querySelector('svg');if(!el)return;let box=el.getBoundingClientRect(),x=(event.clientX-box.left)/box.width*1280;picked=Math.max(0,Math.min(active.p.length,(x-86)/(1214-86)*active.p.length));$('pointInfo').innerHTML=pointText(active,picked);$('profileFig').innerHTML=drawn.profile=profile(active);});
+
+// V3 MODULE — modèle instationnaire 1D exploratoire : volumes finis HLL, reconstruction hydrostatique, friction semi-implicite.
+const temporal={frames:[],active:null,playing:false,computing:false,token:0,raf:0,clock:0,elapsed:0,frameIndex:-1,params:null};
+function temporalConfig(){
+ const duration=Number($('tmDuration').value),base=Number($('tmBase').value),peak=Number($('tmPeak').value),peakAt=Number($('tmPeakAt').value);
+ if(!Number.isFinite(duration)||duration<20||duration>600||!Number.isFinite(base)||base<.05||base>1||!Number.isFinite(peak)||peak<1||peak>5||!Number.isFinite(peakAt)||peakAt<.15||peakAt>.75)throw Error('Paramètres temporels hors limites (durée 20–600 s, débit initial 5–100 %, pointe 1–5 × Q, pointe 15–75 %).');
+ return {duration,base,peak,peakAt};
+}
+function hydrograph(t,p,c){let q0=p.flow*c.base,qpeak=p.flow*c.peak,tp=c.peakAt*c.duration,te=Math.min(c.duration,tp+.42*c.duration);
+ if(t<=tp)return q0+(qpeak-q0)*Math.max(0,t/tp);
+ if(t<te)return qpeak+(q0-qpeak)*(t-tp)/(te-tp);
+ return q0;
+}
+function depthArea(area,p){if(area<=0)return 0;let b=bEff(p),s=sEff(p);if(p.shape==='rectangular')return area/Math.max(b,1e-12);if(p.shape==='triangular')return Math.sqrt(area/Math.max(s,1e-12));return s>1e-12?(Math.sqrt(b*b+4*s*area)-b)/(2*s):area/Math.max(b,1e-12);}
+function pressureTransient(y,p){return pressure(y,p);}
+function svState(area,discharge,p){let y=depthArea(area,p),vel=area>1e-11?discharge/area:0,celerity=Math.sqrt(G*area/Math.max(T(y,p),1e-12));return {area,discharge,y,vel,celerity};}
+function svFlux(left,right,zLeft,zRight,p){
+ const zStar=Math.max(zLeft,zRight),hL=Math.max(0,left.y+zLeft-zStar),hR=Math.max(0,right.y+zRight-zStar),aL=A(hL,p),aR=A(hR,p);
+ const qL=left.area>1e-11?left.discharge*aL/left.area:0,qR=right.area>1e-11?right.discharge*aR/right.area:0;
+ const uL=aL>1e-11?qL/aL:0,uR=aR>1e-11?qR/aR:0,cL=Math.sqrt(G*aL/Math.max(T(hL,p),1e-11)),cR=Math.sqrt(G*aR/Math.max(T(hR,p),1e-11));
+ const sL=Math.min(0,uL-cL,uR-cR),sR=Math.max(0,uL+cL,uR+cR),fl0=qL,fr0=qR;
+ const fl1=qL*uL+G*pressureTransient(hL,p),fr1=qR*uR+G*pressureTransient(hR,p);
+ let f0,f1;if(sL>=0){f0=fl0;f1=fl1;}else if(sR<=0){f0=fr0;f1=fr1;}else{let d=sR-sL;f0=(sR*fl0-sL*fr0+sL*sR*(aR-aL))/d;f1=(sR*fl1-sL*fr1+sL*sR*(qR-qL))/d;}
+ return {mass:f0,momLeft:f1+G*(pressureTransient(left.y,p)-pressureTransient(hL,p)),momRight:f1+G*(pressureTransient(right.y,p)-pressureTransient(hR,p))};
+}
+function createUnsteady(p,c){
+ let geomData=geom(p),nCells=Math.max(40,Math.min(340,Math.ceil(p.length/Math.max(p.dx,p.length/340)))),dx=p.length/nCells;
+ // Discrétiser chaque chute en saut de cote entre cellules ; jet plongeant et dissipation d'impact non représentés.
+ let x=Array.from({length:nCells},(_,i)=>(i+.5)*dx),z=x.map(v=>bedZAt(geomData,p,v));
+ let q0=hydrograph(0,p,c),p0={...p,flow:q0},steady=null;
+ try{steady=solve(p0);}catch(e){} // le profil permanent sert seulement à initialiser la condition de départ.
+ let yn=normal(geomData.sb,p0),initDepth=Math.max(.015,Math.min(p.height*1.4,yn||critical(p0)||p.tail));
+ let areas=x.map(v=>{let a=steady?.points?.length?approxPoint(steady,v):null;return A(Math.max(.01,a?.y??initDepth),p);}),q=areas.map(()=>q0);
+ let vol0=areas.reduce((s,a)=>s+a*dx,0);
+ return {p,c,g:geomData,x,z,dx,n:nCells,areas,q,t:0,steps:0,vol0,inVol:0,outVol:0,firstQ:q0,lastQ:q0,positivityClamps:0};
+}
+function unsteadyStep(m,maxDt){
+ const {p,n,dx}=m,ss=new Array(n),qIn=hydrograph(m.t,p,m.c);
+ let maxWave=.01;
+ for(let i=0;i<n;i++){ss[i]=svState(m.areas[i],m.q[i],p);maxWave=Math.max(maxWave,Math.abs(ss[i].vel)+ss[i].celerity);}
+ let dt=Math.min(maxDt,.33*dx/maxWave);
+ if(!Number.isFinite(dt)||dt<1e-7)throw Error('Pas de temps numérique trop petit : réduire la pente ou ajuster la discrétisation.');
+ let flux=new Array(n+1),up={...ss[0],discharge:qIn};
+ // Débit amont prescrit ; profondeur amont approximée par la cellule (ou tirant imposé si torrentiel).
+ if(ss[0].vel>ss[0].celerity){let y=p.upMode==='imposed'?p.upDepth:Math.max(critical({...p,flow:qIn}),.005);up=svState(A(y,p),qIn,p);}
+ let lastS=ss[n-1],down=lastS.vel>lastS.celerity?lastS:svState(A(p.tail,p),lastS.discharge,p);
+ flux[0]=svFlux(up,ss[0],m.z[0],m.z[0],p);
+ for(let i=1;i<n;i++)flux[i]=svFlux(ss[i-1],ss[i],m.z[i-1],m.z[i],p);
+ flux[n]=svFlux(ss[n-1],down,m.z[n-1],m.z[n-1],p);
+ let nextA=new Array(n),nextQ=new Array(n);
+ for(let i=0;i<n;i++){
+  let a=m.areas[i]-dt/dx*(flux[i+1].mass-flux[i].mass),mom=m.q[i]-dt/dx*(flux[i+1].momLeft-flux[i].momRight);
+  if(!Number.isFinite(a)||!Number.isFinite(mom)||a< -1e-6)throw Error(`Instabilité numérique au PK ${m.x[i].toFixed(2)} m : bilan d'eau non physique.`);
+  if(a<1e-10){if(a<0)m.positivityClamps++;a=1e-10;mom=0;}
+  let y=depthArea(a,p),rad=a/P(Math.max(y,1e-10),p);
+  // Traitement semi-implicite de la friction de Manning : q'=mom/(1+dt*g*n²*|mom|/(A²R^(4/3))).
+  let denom=1+dt*G*p.rough*p.rough*Math.abs(mom)/(a*a*Math.pow(Math.max(rad,1e-9),4/3));mom/=denom;
+  if(!Number.isFinite(mom)||Math.abs(mom/a)>100)throw Error('Vitesse non physique : revoir les hypothèses hydrauliques.');
+  nextA[i]=a;nextQ[i]=mom;
+ }
+ m.areas=nextA;m.q=nextQ;m.t+=dt;m.steps++;m.inVol+=flux[0].mass*dt;m.outVol+=flux[n].mass*dt;m.firstQ=flux[0].mass;m.lastQ=flux[n].mass;
+ return dt;
+}
+function temporalSnapshot(m){
+ const p=m.p;let points=m.x.map((x,i)=>{let y=depthArea(m.areas[i],p),u=m.q[i]/Math.max(m.areas[i],1e-10),fr=Math.abs(u)/Math.max(Math.sqrt(G*m.areas[i]/T(y,p)),1e-8),ri=Math.min(m.g.n,Math.floor((x+1e-9)/p.spacing));return {x,y,z:m.z[i],reg:fr<1?'sub':'super',reach:ri,q:m.q[i],vel:u,fr,segment:segAt(m.g,x).i};});
+ let maxDepth=Math.max(...points.map(r=>r.y)),volume=m.areas.reduce((s,a)=>s+a*m.dx,0),residual=volume-m.vol0-(m.inVol-m.outVol);
+ let transitions=[];for(let i=1;i<points.length;i++){let a=points[i-1],b=points[i],nearStep=m.g.xs.slice(1,-1).some(s=>Math.abs(s-b.x)<2*m.dx);if(a.fr>1.07&&b.fr<.93&&b.y>a.y*1.05&&!nearStep)transitions.push(b.x);}
+ return {t:m.t,qUp:m.firstQ,qDown:m.lastQ,points,maxDepth,volume,residual,transitions};
+}
+function makeTemporalView(s){let b=last,p={...b.p,flow:Math.max(.0001,hydrograph(s.t,b.p,temporal.params)),criticalOn:false,energyOn:false};
+ let reaches=b.reaches.map((r,i)=>({...r,selected:[],jump:{idx:null}}));
+ for(let i=0;i<s.points.length;i++){let pt=s.points[i];reaches[pt.reach].selected.push(pt);}
+ // Les parois des chutes restent séparées : les points de part et d'autre ont des cotes de fond distinctes.
+ return {...b,p,points:s.points,reaches,jumps:[],maxDepth:s.maxDepth,minFree:p.height-s.maxDepth,dynamic:true};
+}
+function temporalPlot(t){let c=temporal.params,p=last?.p;if(!p)return '';if(!c){try{c=temporalConfig();}catch(e){return '';}}
+ let W=660,H=125,L=46,R=642,U=15,D=91,peak=p.flow*c.peak,base=p.flow*c.base,X=v=>L+(R-L)*v/c.duration,Y=q=>D-(q/(peak*1.18))*(D-U);
+ let pts=Array.from({length:101},(_,i)=>[X(i*c.duration/100),Y(hydrograph(i*c.duration/100,p,c))]);
+ let path=pts.map(([x,y],i)=>`${i?'L':'M'}${x.toFixed(2)} ${y.toFixed(2)}`).join(' ');
+ return svg(W,H,`<rect width="${W}" height="${H}" fill="#fbfdff"/>${line(L,D,R,D)}${line(L,U,L,D)}${txt(7,14,'Q (m³/s)',10)}${txt(L,D+17,'0 s',10)}${txt(R,D+17,fmt(c.duration,0)+' s',10,'#536e83','end')}${txt(L-6,Y(peak)+3,fmt(peak,2),10,'#647b90','end')}<path d="${path}" fill="none" stroke="#1686bd" stroke-width="3"/>${line(X(t),U,X(t),D,'#c06231',2,'4 3')}<circle cx="${X(t)}" cy="${Y(hydrograph(t,p,c))}" r="4.5" fill="#c06231"/>`,'Hydrogramme de débit d’entrée et curseur de temps');
+}
+function temporalDisplay(index){if(!temporal.frames.length||!last)return;let i=Math.max(0,Math.min(index,temporal.frames.length-1));if(i===temporal.frameIndex)return;temporal.frameIndex=i;
+ let s=temporal.frames[i],c=makeTemporalView(s);temporal.active=c;
+ drawn.profile=profile(c);drawn.scene=scene(c);drawn.section=section(c);drawn.plan=plan(c);
+ $('profileFig').innerHTML=drawn.profile;$('sceneFig').innerHTML=drawn.scene;$('sectionFig').innerHTML=drawn.section;$('planFig').innerHTML=drawn.plan;
+ const diag=renderDiagnostics(c);$('tmSlider').value=String(i);$('tmClock').textContent=fmt(s.t,1)+' / '+fmt(temporal.params.duration,0)+' s';$('tmQin').textContent=fmt(s.qUp,3)+' m³/s';$('tmQout').textContent=fmt(s.qDown,3)+' m³/s';$('tmMax').textContent=fmt(s.maxDepth,3)+' m';$('tmMass').textContent=fmt(s.residual,5)+' m³';$('tmJump').textContent=[s.transitions.length?s.transitions.map(x=>'Fr≈1 vers PK '+fmt(x,1)+' m').join(' · '):'Pas de transition Fr nette',diag.remous.length?diag.remous.map((z,i)=>'Remous Z'+(i+1)+' '+fmt(z.start,1)+'-'+fmt(z.end,1)+' m').join(' · '):'Pas de remous marqué'].join(' | ');
+ $('tmPlot').innerHTML=temporalPlot(s.t);$('tmWarning').textContent=s.maxDepth>last.p.height?'⚠ Débordement numérique : la section 1D ne représente pas l’écoulement sur les berges.':'Transitions de Froude et remous visualisés de façon simplifiée ; la longueur exacte du ressaut reste indicative.';
+ $('pointInfo').innerHTML=picked!==null?pointText(c,picked):'Simulation temporelle : cliquez sur le profil pour inspecter une section.';
+}
+function temporalStop(reset=true){temporal.token++;temporal.computing=false;temporal.playing=false;cancelAnimationFrame(temporal.raf);temporal.raf=0;temporal.clock=0;temporal.elapsed=0;if(reset){temporal.frames=[];temporal.active=null;temporal.frameIndex=-1;if($('tmStatus'))$('tmStatus').textContent='Paramètres modifiés : relancer la simulation.';}
+ if($('tmPlay')){$('tmPlay').disabled=false;$('tmPlay').textContent='▶ Calculer et lire';$('tmPause').disabled=true;$('tmCancel').disabled=true;}}
+function temporalTick(timestamp){if(!temporal.playing)return;if(!temporal.clock)temporal.clock=timestamp;
+ let dt=Math.min(.18,Math.max(0,(timestamp-temporal.clock)/1000));temporal.clock=timestamp;
+ temporal.elapsed=Math.min(temporal.params.duration,temporal.elapsed+dt*Number($('tmSpeed').value));
+ temporalDisplay(Math.round(temporal.elapsed/temporal.params.duration*(temporal.frames.length-1)));
+ if(temporal.elapsed>=temporal.params.duration){temporal.playing=false;$('tmPlay').textContent='↺ Rejouer';$('tmPause').disabled=true;$('tmStatus').textContent='Simulation terminée · utiliser le curseur pour inspecter un instant.';return;}
+ temporal.raf=requestAnimationFrame(temporalTick);
+}
+function temporalPlay(){if(!last)return;
+ if(!temporal.frames.length){temporalCompute();return;}
+ if(temporal.playing)return;
+ if(temporal.elapsed>=temporal.params.duration){temporal.elapsed=0;temporal.frameIndex=-1;temporalDisplay(0);}
+ temporal.playing=true;temporal.clock=0;$('tmPlay').textContent='▶ Lecture en cours';$('tmPause').disabled=false;$('tmStatus').textContent='Lecture de la simulation instationnaire · vitesse '+$('tmSpeed').value+'×';temporal.raf=requestAnimationFrame(temporalTick);
+}
+function temporalCompute(){if(!last||temporal.computing)return;let c,m;try{c=temporalConfig();m=createUnsteady(state,c);}catch(e){$('tmStatus').textContent=e.message;return;}
+ temporalStop();temporal.computing=true;temporal.params=c;let token=temporal.token,frames=[temporalSnapshot(m)],frame=1,numberFrames=120;
+ $('tmPlay').disabled=true;$('tmPause').disabled=true;$('tmCancel').disabled=false;$('tmStatus').textContent='Calcul instationnaire initialisé…';
+ function batch(){if(token!==temporal.token)return;
+  try{let n=0;
+   while(frame<=numberFrames&&n<230){let goal=c.duration*frame/numberFrames;
+    if(m.t>=goal-1e-8){frames.push(temporalSnapshot(m));frame++;continue;}
+    if(m.steps>85000)throw Error('Limite de 85 000 pas atteinte : réduire la durée ou augmenter le pas spatial.');
+    unsteadyStep(m,goal-m.t);n++;
+   }
+   $('tmStatus').textContent=`Calcul des états transitoires : ${Math.min(100,Math.round(100*(frame-1)/numberFrames))} % · ${m.steps} pas · Δx = ${fmt(m.dx,2)} m`;
+   if(frame<=numberFrames){setTimeout(batch,0);return;}
+   if(m.positivityClamps>m.steps*m.n*.002)throw Error('De nombreuses cellules asséchées ont été corrigées : résultats non fiables.');
+   temporal.frames=frames;temporal.computing=false;$('tmPlay').disabled=false;$('tmCancel').disabled=true;$('tmSlider').max=String(frames.length-1);temporal.frameIndex=-1;temporal.elapsed=0;temporalDisplay(0);
+   let relativeMass=Math.abs(frames.at(-1).residual)/Math.max(m.vol0,m.inVol,1);
+   if(relativeMass>1e-3){$('tmStatus').textContent=`Avertissement : résidu de masse ${(100*relativeMass).toFixed(2)} % ; vérifier résultats.`;return;}
+   $('tmStatus').textContent=`Simulation calculée : ${frames.length} instants · ${m.steps} pas · résidu de masse ${(100*relativeMass).toFixed(4)} %.`;temporalPlay();
+  }catch(e){temporalStop();$('tmStatus').textContent='Calcul arrêté : '+e.message;}
+ }
+ setTimeout(batch,0);
+}
+$('tmPlay').addEventListener('click',temporalPlay);
+$('tmPause').addEventListener('click',()=>{temporal.playing=false;cancelAnimationFrame(temporal.raf);$('tmPlay').textContent='▶ Reprendre';$('tmPause').disabled=true;$('tmStatus').textContent='Lecture en pause.';});
+$('tmCancel').addEventListener('click',()=>{temporalStop();if(last)render(last);$('tmStatus').textContent='Calcul annulé.';});
+$('tmReset').addEventListener('click',()=>{temporal.playing=false;cancelAnimationFrame(temporal.raf);temporal.elapsed=0;temporal.frameIndex=-1;
+ if(temporal.frames.length){temporalDisplay(0);$('tmPlay').textContent='▶ Rejouer';$('tmPause').disabled=true;$('tmStatus').textContent='Retour à t = 0 s.';}
+ else if(last){render(last);$('tmClock').textContent='0 s';$('tmStatus').textContent='État permanent restauré ; cliquer sur Calculer et lire.';}
+});
+$('tmSlider').addEventListener('input',()=>{if(!temporal.frames.length)return;temporal.playing=false;cancelAnimationFrame(temporal.raf);let index=Number($('tmSlider').value);temporal.elapsed=temporal.frames[index].t;temporalDisplay(index);$('tmPlay').textContent='▶ Reprendre';$('tmPause').disabled=true;$('tmStatus').textContent='Lecture manuelle · t = '+fmt(temporal.elapsed,1)+' s';});
+for(let id of ['tmDuration','tmBase','tmPeak','tmPeakAt'])$(id).addEventListener('input',()=>{temporalStop();if(last){render(last);$('tmPlot').innerHTML=temporalPlot(0);}});
+$('tmExport').addEventListener('click',()=>{if(!temporal.frames.length)return;let rows=['temps_s;pk_m;cote_fond_m;tirant_eau_m;cote_eau_m;debit_local_m3_s;vitesse_m_s;froude'];
+ for(let s of temporal.frames)for(let p of s.points)rows.push([s.t,p.x,p.z,p.y,p.z+p.y,p.q,p.vel,p.fr].map(v=>v.toFixed(5).replace('.',',')).join(';'));
+ download(slug()+'_FOSSE_EP_V5_instants.csv','\uFEFF'+rows.join('\r\n'),'text/csv;charset=utf-8');});
+
+try{let old=JSON.parse(localStorage.getItem('fosse_ep_v5_autosave')||'null');if(old&&typeof old==='object'&&nums.every(k=>Number.isFinite(old[k])&&old[k]>=limits[k][0]&&old[k]<=limits[k][1]))populate({...defaults,...old});else populate(defaults);}catch(e){populate(defaults);}syncUi();
+</script></body></html>
